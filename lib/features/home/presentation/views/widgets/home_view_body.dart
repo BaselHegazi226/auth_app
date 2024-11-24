@@ -27,13 +27,16 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   void successAwesomeDialogInHome({required String navigateFrom}) {
     String successFrom;
+    Color awesomeDialogColor = kFocusColor;
     //switch case to handle the different sign in methods
     switch (navigateFrom) {
       case SignInWithFacebook.id:
         successFrom = 'Facebook';
+        awesomeDialogColor = kFacebookColor;
         break;
       case SignInWithGoogle.id:
         successFrom = 'Google';
+        awesomeDialogColor = kGoogleColor;
         break;
       default:
         successFrom = 'Gmail';
@@ -44,6 +47,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       title: 'Success Sign In With $successFrom',
       description: 'Welcome to the Home!',
       dialogState: 'success',
+      dialogBorderColor: awesomeDialogColor,
+      dialogStateColor: awesomeDialogColor,
+      titleColor: awesomeDialogColor,
       onCancelPressed: () {
         Navigator.of(context).pop(); // Close the dialog
       },
