@@ -17,16 +17,27 @@ class HomeViewBody extends StatefulWidget {
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
-  void successAwesomeDialogInHome({required String successFrom}) {
-    String successFrom = 'Gmail';
-    switch (successFrom) {
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      String navigateFrom = GoRouterState.of(context).extra as String;
+      successAwesomeDialogInHome(navigateFrom: navigateFrom);
+    });
+  }
+
+  void successAwesomeDialogInHome({required String navigateFrom}) {
+    String successFrom;
+    switch (navigateFrom) {
       case SignInWithFacebook.id:
-        successFrom = 'FaceBook';
+        successFrom = 'Facebook';
+        break;
       case SignInWithGoogle.id:
         successFrom = 'Google';
+        break;
       default:
         successFrom = 'Gmail';
     }
+
     customAwesomeDialog(
       context: context,
       title: 'Success Sign In With $successFrom',
@@ -43,16 +54,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    String navigateFrom = GoRouterState.of(context).extra as String;
-    successAwesomeDialogInHome(successFrom: navigateFrom);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kFocusColor.withOpacity(.05),
         elevation: 2,
         title: Padding(
-          padding: EdgeInsets.only(
-            top: 32,
-          ),
+          padding: const EdgeInsets.only(top: 32),
           child: Text(
             'Home View',
             style: TextStyle(
@@ -76,7 +83,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             Align(
               alignment: Alignment.center,
               child: HomeViewButton(
-                navigateFrom: navigateFrom,
+                navigateFrom: GoRouterState.of(context).extra as String,
               ),
             ),
           ],
