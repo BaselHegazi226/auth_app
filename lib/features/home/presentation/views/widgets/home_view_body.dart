@@ -27,6 +27,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   void successAwesomeDialogInHome({required String navigateFrom}) {
     String successFrom;
+    //switch case to handle the different sign in methods
     switch (navigateFrom) {
       case SignInWithFacebook.id:
         successFrom = 'Facebook';
@@ -37,7 +38,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       default:
         successFrom = 'Gmail';
     }
-
+//awesome dialog to show the animation refer to switch case
     customAwesomeDialog(
       context: context,
       title: 'Success Sign In With $successFrom',
