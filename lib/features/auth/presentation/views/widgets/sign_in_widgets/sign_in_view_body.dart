@@ -215,21 +215,24 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   void failureStateFun(SignInFailure state) {
     setState(
       () {
+        switch (state.errorMessage) {
+          //to put the error message of email field
+          case 'No user found with this email.':
+            emailErrorMessage = state.errorMessage;
+            passwordErrorMessage = null;
+            break;
+          case 'Invalid password.':
+            //to put the error message of password field
+            emailErrorMessage = null;
+            passwordErrorMessage = 'Check password or press forget password ?';
+            break;
+          default:
+            //to make the error message of the two fields is null
+            emailErrorMessage = null;
+            passwordErrorMessage = null;
+        }
         //to reActive the sign in button
         isEnableButton = true;
-        if (state.errorMessage.contains('No user found with this email.')) {
-          //to put the error message of email field
-          emailErrorMessage = state.errorMessage;
-          passwordErrorMessage = null;
-        } else if (state.errorMessage.contains('Invalid password.')) {
-          //to put the error message of password field
-          emailErrorMessage = null;
-          passwordErrorMessage = 'Check password or press forget password ?';
-        } else {
-          //to make the error message of the two fields is null
-          emailErrorMessage = null;
-          passwordErrorMessage = null;
-        }
         //to back with validate mode to focus mode
         autoValidateMode = AutovalidateMode.always;
         // After the state is updated, trigger validation
