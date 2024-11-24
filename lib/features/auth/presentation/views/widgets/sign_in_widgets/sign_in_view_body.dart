@@ -99,6 +99,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
+                      passwordController.clear();
                       GoRouter.of(context).push(ForgetPasswordView.id);
                     },
                     child: CustomTitle(
