@@ -3,6 +3,7 @@ import 'package:auth_with_firebase_application/core/utilities/dialogState.dart';
 import 'package:auth_with_firebase_application/core/utilities/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/helper/constant.dart';
 import '../../../../../../core/utilities/custom_text_button.dart';
@@ -135,17 +136,15 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
     });
     customAwesomeDialog(
         context: context,
-        title: 'Success Email ',
-        titleColor: Color(0xff00CA71),
-        titleSize: 24,
+        title: 'Success Found Email',
         description: 'Check Inbox To Reset Your Password',
-        descriptionSize: 18,
-        descriptionColor: Colors.grey,
-        dialogStateColor: Color(0xff00CA71),
         dialogState: 'success',
-        dialogBorderColor: Color(0xff00CA71),
-        dialogBackgroundColor: Colors.white,
         onCancelPressed: () {},
-        onSuccessPressed: () {});
+        onSuccessPressed: () {
+          GoRouter.of(context).pop();
+          GoRouter.of(context).pop();
+          showSnackBar(context, 'Sign in with new password',
+              kFocusColor.withOpacity(.4));
+        });
   }
 }
