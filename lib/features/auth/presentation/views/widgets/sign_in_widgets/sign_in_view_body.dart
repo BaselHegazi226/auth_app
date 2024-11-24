@@ -205,26 +205,31 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   }
 
   void successStateFun(BuildContext context) {
-    //showSnackBar(context, 'Success Sign In', focusColor.withOpacity(.7));
-    //awesome dialog to give to the user good experience Depending on the test condition
-    customAwesomeDialog(
-      context: context,
-      title: 'Success Sign In',
-      description: 'Go to home',
-      dialogState: 'success',
-      onCancelPressed: () {},
-      onSuccessPressed: () {
-        //when i click ok remove the awesome dialog
-        Navigator.of(context).pop();
-      },
-    );
-    //go to onResetFun()
-    onResetFun();
-    //to navigate me to the home view
-    GoRouter.of(context).push(
+    // Navigate to the HomeView first
+    GoRouter.of(context)
+        .push(
       HomeView.id,
       extra: SignInView.id,
-    );
+    )
+        .then((_) {
+      // After navigation, show the AwesomeDialog
+      customAwesomeDialog(
+        context: context,
+        title: 'Success Sign In',
+        description: 'Welcome to the Home!',
+        dialogState: 'success',
+        onCancelPressed: () {
+          // Optional: Handle cancel action
+          Navigator.of(context).pop(); // Close the dialog
+        },
+        onSuccessPressed: () {
+          // Optional: Handle success action
+          Navigator.of(context).pop(); // Close the dialog
+        },
+      );
+      // Call reset function (if needed)
+    });
+    onResetFun();
   }
 
   void failureStateFun(SignInFailure state) {
