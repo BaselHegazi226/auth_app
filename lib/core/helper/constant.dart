@@ -19,7 +19,7 @@ const Color kFilterRightColor = Color.fromRGBO(206, 147, 216, 1);
 const Color kFilterLeftColor = Color.fromRGBO(244, 143, 177, 1);
 const Color kTitleDialogColor = Color(0xff00CA71);
 const Color kDialogStateColor = Color(0xff00CA71);
-const Color kDialogBorderColor = Color(0xff00CA71);
+const Color kDialogBorderColor = Colors.white;
 const Color kDialogBackgroundColor = Colors.white;
 const Color kDescriptionColor = Colors.grey;
 Tuple2<IconData, Color> iconDataAndColorFun({required bool condition}) {
