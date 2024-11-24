@@ -96,7 +96,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           errorStyle: const TextStyle(
             fontWeight: FontWeight.w900,
-            fontSize: 20,
+            fontSize: 16,
             fontFamily: 'ubuntuCondensed',
           ),
           errorText: errorMess,
