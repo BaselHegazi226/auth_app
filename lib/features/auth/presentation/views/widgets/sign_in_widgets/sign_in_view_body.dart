@@ -1,5 +1,4 @@
 import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
-import 'package:auth_with_firebase_application/core/utilities/dialogState.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sign_in_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_button.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_email.dart';
@@ -206,29 +205,10 @@ class _SignInViewBodyState extends State<SignInViewBody> {
 
   void successStateFun(BuildContext context) {
     // Navigate to the HomeView first
-    GoRouter.of(context)
-        .push(
+    GoRouter.of(context).push(
       HomeView.id,
       extra: SignInView.id,
-    )
-        .then((_) {
-      // After navigation, show the AwesomeDialog
-      customAwesomeDialog(
-        context: context,
-        title: 'Success Sign In',
-        description: 'Welcome to the Home!',
-        dialogState: 'success',
-        onCancelPressed: () {
-          // Optional: Handle cancel action
-          Navigator.of(context).pop(); // Close the dialog
-        },
-        onSuccessPressed: () {
-          // Optional: Handle success action
-          Navigator.of(context).pop(); // Close the dialog
-        },
-      );
-      // Call reset function (if needed)
-    });
+    );
     onResetFun();
   }
 
