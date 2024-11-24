@@ -1,0 +1,9 @@
+> Task :sqflite:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\BaseL HeGaZy\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 2B:A1:D7:98:9B:49:72:C4:D6:68:6A:97:BF:D2:D8:60
+SHA1: 89:7C:E3:3E:EF:45:BC:63:62:E4:A8:52:5C:68:9D:4D:DC:C9:00:44
+SHA-256: 65:80:67:CB:8C:13:0F:26:BE:83:29:FB:99:25:84:CD:69:BB:02:A8:C4:6C:CA:2B:96:9E:9B:F4:13:EF:2C:B4
+Valid until: Tuesday, October 6, 2054
