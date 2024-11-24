@@ -2,11 +2,11 @@ import 'package:auth_with_firebase_application/core/helper/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utilities/custom_circle_indicator.dart';
-import '../../../../../core/utilities/custom_text_button.dart';
-import '../../../../../core/utilities/custom_title.dart';
-import '../../../../../core/utilities/show_snack_bar.dart';
-import '../../../../auth/presentation/manager/auth_manager/auth_bloc.dart';
+import '../../../../../../core/utilities/custom_circle_indicator.dart';
+import '../../../../../../core/utilities/custom_text_button.dart';
+import '../../../../../../core/utilities/custom_title.dart';
+import '../../../../../../core/utilities/show_snack_bar.dart';
+import '../../../manager/auth_manager/auth_bloc.dart';
 
 class VerifyEmailButton extends StatefulWidget {
   const VerifyEmailButton({super.key});

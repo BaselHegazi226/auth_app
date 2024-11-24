@@ -1,6 +1,6 @@
 import 'package:auth_with_firebase_application/features/auth/data/repos/auth_repo/auth_repo_impl.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/manager/auth_manager/auth_bloc.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/widgets/verify_email_view_body.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/verify_email_view_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

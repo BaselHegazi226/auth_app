@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helper/constant.dart';
-import '../../../../../core/utilities/custom_title.dart';
+import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/utilities/custom_title.dart';
 
 class VerifyMessage extends StatelessWidget {
   const VerifyMessage({

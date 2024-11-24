@@ -9,8 +9,8 @@ import '../../../../../../core/utilities/custom_text_button.dart';
 import '../../../../../../core/utilities/custom_text_form_field.dart';
 import '../../../../../../core/utilities/custom_title.dart';
 import '../../../../../../core/utilities/text_styles.dart';
-import '../../../../../verify_email/presentation/views/widgets/custom_text.dart';
 import '../../../manager/auth_manager/auth_bloc.dart';
+import '../verify_email_widgets/custom_text.dart';
 
 class ForgetPasswordViewBody extends StatefulWidget {
   const ForgetPasswordViewBody({super.key});

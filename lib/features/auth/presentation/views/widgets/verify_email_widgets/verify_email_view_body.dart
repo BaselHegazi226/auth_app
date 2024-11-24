@@ -3,19 +3,19 @@ import 'dart:async';
 import 'package:auth_with_firebase_application/core/helper/constant.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_text_button.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/verify_email_view.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/widgets/verifyMessage.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/widgets/visibility_verification_message.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/verify_email_view.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/verifyMessage.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/visibility_verification_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utilities/dialogState.dart';
-import '../../../../../core/utilities/show_snack_bar.dart';
-import '../../../../../core/utilities/text_styles.dart';
-import '../../../../auth/presentation/manager/auth_manager/auth_bloc.dart';
-import '../../../../home/presentation/views/home_view.dart';
-import 'custom_text.dart';
+import '../../../../../../core/utilities/dialogState.dart';
+import '../../../../../../core/utilities/show_snack_bar.dart';
+import '../../../../../../core/utilities/text_styles.dart';
+import '../../../../../home/presentation/views/home_view.dart';
+import '../../../../../verify_email/presentation/views/widgets/custom_text.dart';
+import '../../../manager/auth_manager/auth_bloc.dart';
 
 class VerifyEmailViewBody extends StatefulWidget {
   const VerifyEmailViewBody({super.key});
@@ -98,8 +98,10 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                   dialogState: 'success',
                   dialogStateColor: Color(0xff00CA71),
                   onSuccessPressed: () {
-                    GoRouter.of(context)
-                        .push(HomeView.id, extra: VerifyEmailView.id);
+                    GoRouter.of(context).push(
+                      HomeView.id,
+                      extra: VerifyEmailView.id,
+                    );
                   },
                   onCancelPressed: () {},
                 );

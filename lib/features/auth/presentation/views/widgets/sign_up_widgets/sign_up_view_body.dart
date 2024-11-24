@@ -1,6 +1,6 @@
 import 'package:auth_with_firebase_application/core/utilities/show_snack_bar.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/manager/auth_manager/auth_bloc.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/verify_email_view.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/verify_email_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

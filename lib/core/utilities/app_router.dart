@@ -2,8 +2,8 @@ import 'package:auth_with_firebase_application/features/auth/presentation/views/
 import 'package:auth_with_firebase_application/features/auth/presentation/views/forget_password_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sign_in_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sing_up_view.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/verify_email_view.dart';
 import 'package:auth_with_firebase_application/features/home/presentation/views/home_view.dart';
-import 'package:auth_with_firebase_application/features/verify_email/presentation/views/verify_email_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {

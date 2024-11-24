@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../auth/data/repos/auth_repo/auth_repo.dart';
+import '../../../data/repos/auth_repo/auth_repo.dart';
 
 part 'verify_state.dart';
 
