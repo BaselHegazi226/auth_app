@@ -10,8 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/utilities/show_snack_bar.dart';
 import '../../../../../../core/utilities/text_styles.dart';
-import '../../../../../verify_email/presentation/views/widgets/custom_text.dart';
 import '../../../manager/auth_manager/auth_bloc.dart';
+import 'custom_text.dart';
 
 class VerifyEmailViewBody extends StatefulWidget {
   const VerifyEmailViewBody({super.key});
