@@ -157,10 +157,10 @@ class AuthRepoImpl implements AuthRepo {
       final LoginResult loginResult = await FacebookAuth.instance.login(
         permissions: ['email', 'public_profile'], // Request these permissions
       );
-
       // Handle login result
-      if (loginResult.status == LoginStatus.success) {
-        // If login is successful, get the OAuth credentials
+      if (loginResult.status == LoginStatus.success &&
+          loginResult.accessToken != null) {
+        // If login is successful & login access token is not null, get the OAuth credentials
         final OAuthCredential facebookAuthCredential =
             FacebookAuthProvider.credential(
                 loginResult.accessToken!.tokenString);
@@ -168,6 +168,7 @@ class AuthRepoImpl implements AuthRepo {
             .signInWithCredential(facebookAuthCredential);
         return right(null); // Login successful
       } else if (loginResult.status == LoginStatus.cancelled) {
+        print('facebook error: ${loginResult.message}');
         // User cancelled login
         return left(FirebaseFailure(errorMessage: 'Login cancelled by user.'));
       } else {
@@ -175,11 +176,14 @@ class AuthRepoImpl implements AuthRepo {
         return left(FirebaseFailure(errorMessage: 'Facebook login failed.'));
       }
     } on FirebaseAuthException catch (authException) {
+      print('facebook auth exception:$authException');
       return left(
           FirebaseFailure.fromFirebaseAuthException(exception: authException));
     } on FirebaseException catch (exception) {
+      print('facebook firebase exception:$exception');
       return left(FirebaseFailure.fromFirebaseException(exception: exception));
     } on PlatformException catch (e) {
+      print('facebook platform exception:$e');
       return left(FirebaseFailure(errorMessage: e.toString()));
     } catch (e) {
       return left(FirebaseFailure(errorMessage: e.toString()));

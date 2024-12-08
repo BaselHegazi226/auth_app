@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">authapp</string>
-    <string name="facebook_app_id">891287779618760</string>
-    <string name="facebook_client_token">f70902c479d16f5e05951c35f699dee2</string>
+    <string name="app_name">auth_firebase_app</string>
+    <string name="facebook_app_id">1250975392853122</string>
+    <string name="facebook_client_token">b285ed1246aa1e46c0498b529faa14d2</string>
 </resources>

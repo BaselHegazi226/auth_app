@@ -1,4 +1,5 @@
-app id : 909575794360356
-app secret : 9ad6374dbd26910d6f5932dc93b7a567
+facebook app id : 1250975392853122
+face book app secret : 6d7dbad49ae27f3b340d8c0012f5d257
 app hash key : iXzjPu9FvGNi5KhSXGidTdzJAEQ=
-token client : 523e0dbb309483d016aa3ef744b68cb6
+token client : b285ed1246aa1e46c0498b529faa14d2
+webstite convert sha265 to hash key : tomeko

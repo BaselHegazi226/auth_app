@@ -1,3 +1,71 @@
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    &lt;!&ndash; Permissions &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.INTERNET"/>-->
+
+<!--    <application-->
+<!--        android:label="auth_with_firebase_application"-->
+<!--        android:name="${applicationName}"-->
+<!--        android:icon="@mipmap/ic_launcher">-->
+<!--        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>-->
+<!--        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>-->
+
+<!--        <activity android:name="com.facebook.FacebookActivity"-->
+<!--            android:configChanges=-->
+<!--                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+<!--            android:label="@string/app_name" />-->
+<!--        <activity-->
+<!--            android:name="com.facebook.CustomTabActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        &lt;!&ndash; MainActivity configuration &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:taskAffinity=""-->
+<!--            android:theme="@style/LaunchTheme"-->
+<!--            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"-->
+<!--            android:hardwareAccelerated="true"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
+
+
+<!--            &lt;!&ndash; Specifies an Android theme to apply to this Activity &ndash;&gt;-->
+<!--            <meta-data-->
+<!--                android:name="io.flutter.embedding.android.NormalTheme"-->
+<!--                android:resource="@style/NormalTheme"-->
+<!--                />-->
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+<!--        &lt;!&ndash; Meta-data for Flutter plugins &ndash;&gt;-->
+<!--        <meta-data-->
+<!--            android:name="flutterEmbedding"-->
+<!--            android:value="2" />-->
+
+<!--        &lt;!&ndash; Meta-data for Google Sign-In (with your specific Client ID) &ndash;&gt;-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.appid"-->
+<!--            android:value="716844431513-75evonvb36vpc90aor9r0uvr0e38rrai.apps.googleusercontent.com" />-->
+<!--    </application>-->
+
+<!--    &lt;!&ndash; Queries for activities that can process text (used by the Flutter engine) &ndash;&gt;-->
+<!--    <queries>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.PROCESS_TEXT"/>-->
+<!--            <data android:mimeType="text/plain"/>-->
+<!--        </intent>-->
+<!--    </queries>-->
+<!--</manifest>-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Permissions -->
@@ -23,6 +91,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
+
         <!-- MainActivity configuration -->
         <activity
             android:name=".MainActivity"
@@ -33,7 +102,6 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
-
 
             <!-- Specifies an Android theme to apply to this Activity -->
             <meta-data
@@ -52,17 +120,24 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <!-- Meta-data for Google Sign-In (with your specific Client ID) -->
+        <!-- Meta-data for Google Sign-In -->
         <meta-data
             android:name="com.google.android.gms.appid"
             android:value="716844431513-75evonvb36vpc90aor9r0uvr0e38rrai.apps.googleusercontent.com" />
     </application>
 
-    <!-- Queries for activities that can process text (used by the Flutter engine) -->
+    <!-- Queries for package visibility -->
     <queries>
+        <!-- Existing query -->
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+
+        <!-- Add Facebook package visibility -->
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.facebook.lite" />
+        <package android:name="com.facebook.orca" />
+        <package android:name="com.instagram.android" />
     </queries>
 </manifest>
