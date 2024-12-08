@@ -130,3 +130,17 @@ class ForgetPasswordFailure extends AuthStates {
 }
 
 class ForgetPasswordLoading extends AuthStates {}
+
+//Sign in With Phone
+class SignInWithPhoneInitial extends AuthStates {}
+
+class SignInWithPhoneSuccess extends AuthStates {}
+
+class SignInWithPhoneFailure extends AuthStates {
+  final String errorMessage;
+  SignInWithPhoneFailure({
+    required this.errorMessage,
+  });
+}
+
+class SignInWithPhoneLoading extends AuthStates {}

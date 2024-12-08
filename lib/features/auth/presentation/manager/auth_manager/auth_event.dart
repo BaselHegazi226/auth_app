@@ -21,6 +21,13 @@ class SignUpEvent extends AuthEvent {
 
 class SignInWithGoogleEvent extends AuthEvent {}
 
+class SignInWithPhoneEvent extends AuthEvent {
+  final String phoneNumber;
+  SignInWithPhoneEvent({
+    required this.phoneNumber,
+  });
+}
+
 class VerifyEmailEvent extends AuthEvent {}
 
 class ForgetPasswordEvent extends AuthEvent {
