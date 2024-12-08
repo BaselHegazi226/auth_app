@@ -1,8 +1,6 @@
-import 'package:auth_with_firebase_application/core/helper/constant.dart';
-import 'package:auth_with_firebase_application/core/utilities/AssetsData.dart';
-import 'package:auth_with_firebase_application/core/utilities/custom_icon_button.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_facebook.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_google.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_phone.dart';
 import 'package:flutter/material.dart';
 
 class OtherSignIn extends StatelessWidget {
@@ -26,14 +24,8 @@ class OtherSignIn extends StatelessWidget {
         SignInWithFacebook(
           isEnableFacebookButton: isEnableButton,
         ),
-        CustomIconButton(
-          textColor: kPhoneColor,
-          imageColor: kPhoneColor,
-          image: AssetsData.kPhoneImage,
-          errorLoadImage: AssetsData.kPhoneOfflineImage,
-          onPressed: () {},
-          title: 'Phone',
-        ),
+        SizedBox(width: 16),
+        SignInWithPhone(),
       ],
     );
   }

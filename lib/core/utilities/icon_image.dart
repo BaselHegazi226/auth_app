@@ -32,7 +32,7 @@ class IconImage extends StatelessWidget {
           ) {
             return Image.asset(
               errorImage,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             );
           },
           imageUrl: image,
