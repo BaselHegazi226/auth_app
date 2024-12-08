@@ -9,6 +9,7 @@ final Color kFocusForgetPassColor = Colors.grey.shade600;
 const IconData kDisableIconData = Icons.check_box_outline_blank_rounded;
 const IconData kEnableIconData = Icons.check_box_rounded;
 final Color kFacebookColor = Color(0xff3F67CA);
+final Color kPhoneColor = Colors.black;
 final Color kGoogleColor = Colors.black;
 final Color kSocialColor = Colors.grey.shade500;
 final Color kMacColor = Colors.black.withOpacity(.7);
