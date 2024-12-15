@@ -59,6 +59,7 @@ class FirebaseFailure extends Failure {
   factory FirebaseFailure.fromFirebaseAuthException(
       {required FirebaseAuthException exception}) {
     switch (exception.code) {
+      //Sign in/up Auth Errors
       case 'user-not-found':
         return FirebaseFailure(errorMessage: 'No user found with this email.');
       case 'wrong-password':
@@ -74,6 +75,26 @@ class FirebaseFailure extends Failure {
         return FirebaseFailure(errorMessage: 'Invalid Email address.');
       case 'email-already-in-use':
         return FirebaseFailure(errorMessage: 'Email already in use.');
+      // Phone Number Authentication Errors
+      case 'invalid-verification-code':
+        return FirebaseFailure(
+            errorMessage: 'The verification code is invalid.');
+      case 'invalid-verification-id':
+        return FirebaseFailure(errorMessage: 'Invalid verification ID.');
+      case 'invalid-phone-number':
+        return FirebaseFailure(errorMessage: 'The phone number is invalid.');
+      case 'missing-phone-number':
+        return FirebaseFailure(errorMessage: 'Phone number is required.');
+      case 'quota-exceeded':
+        return FirebaseFailure(
+            errorMessage: 'SMS quota for this project has been exceeded.');
+      case 'session-expired':
+        return FirebaseFailure(
+            errorMessage: 'The SMS code has expired. Please try again.');
+      case 'too-many-requests':
+        return FirebaseFailure(
+            errorMessage: 'Too many requests. Try again later.');
+      //Default Case
       default:
         return FirebaseFailure(errorMessage: 'Invalid credentials.');
     }
