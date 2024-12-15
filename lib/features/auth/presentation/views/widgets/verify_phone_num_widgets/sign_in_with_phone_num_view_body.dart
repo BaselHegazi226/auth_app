@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utilities/text_styles.dart';
 
-class VerifyPhoneNumViewBody extends StatelessWidget {
-  const VerifyPhoneNumViewBody({super.key});
+class SignInWithPhoneNumViewBody extends StatelessWidget {
+  const SignInWithPhoneNumViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

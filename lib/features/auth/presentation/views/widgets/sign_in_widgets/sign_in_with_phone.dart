@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../../core/helper/constant.dart';
 import '../../../../../../core/utilities/AssetsData.dart';
 import '../../../../../../core/utilities/custom_icon_button.dart';
-import '../../verify_phone_num_view.dart';
+import '../../sign_in_phone_num_view.dart';
 
 class SignInWithPhone extends StatelessWidget {
   const SignInWithPhone({super.key});
@@ -17,7 +17,7 @@ class SignInWithPhone extends StatelessWidget {
       image: AssetsData.kPhoneImage,
       errorLoadImage: AssetsData.kPhoneOfflineImage,
       onPressed: () {
-        GoRouter.of(context).push(VerifyPhoneNumView.id);
+        GoRouter.of(context).push(SignInPhoneNumView.id);
       },
       title: 'Phone',
     );
