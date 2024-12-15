@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utilities/text_styles.dart';
 import '../auth_widgets/filter_section.dart';
 
 class SignInWithPhoneNumViewBody extends StatelessWidget {
@@ -8,21 +7,10 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Phone Number Sign In',
-          style: Styles.textStyleFun(
-            color: Colors.green,
-            size: 24,
-          ),
-        ),
-      ),
-      body: Stack(
-        children: [
-          FilterSection(), // Fixed background
-        ],
-      ),
+    return Stack(
+      children: [
+        FilterSection(), // Fixed background
+      ],
     );
   }
 }
