@@ -249,7 +249,14 @@ class AuthRepoImpl implements AuthRepo {
           await auth.signInWithCredential(credential);
         },
         verificationFailed: (FirebaseAuthException error) {},
-        codeSent: (String verificationId, int? forceResendingToken) {},
+        codeSent: (String verificationId, int? forceResendingToken) async {
+          String smsCode = 'xxxx';
+          // Create a PhoneAuthCredential with the code
+          PhoneAuthCredential credential = PhoneAuthProvider.credential(
+              verificationId: verificationId, smsCode: smsCode);
+          // Sign the user in (or link) with the credential
+          await auth.signInWithCredential(credential);
+        },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
       return right(null);
