@@ -6,7 +6,7 @@ import 'package:auth_with_firebase_application/features/auth/presentation/views/
 import 'package:auth_with_firebase_application/features/home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/presentation/views/verify_phone_num_view.dart';
+import '../../features/auth/presentation/views/sign_in_phone_num_view.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(routes: [
@@ -39,8 +39,8 @@ abstract class AppRouter {
       builder: (context, state) => const VerifyEmailView(),
     ),
     GoRoute(
-      path: VerifyPhoneNumView.id,
-      builder: (context, state) => const VerifyPhoneNumView(),
+      path: SignInPhoneNumView.id,
+      builder: (context, state) => const SignInPhoneNumView(),
     ),
   ]);
 }
