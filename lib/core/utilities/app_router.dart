@@ -3,6 +3,7 @@ import 'package:auth_with_firebase_application/features/auth/presentation/views/
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sign_in_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sing_up_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/verify_email_view.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_phone.dart';
 import 'package:auth_with_firebase_application/features/home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -35,6 +36,10 @@ abstract class AppRouter {
     GoRoute(
       path: VerifyEmailView.id,
       builder: (context, state) => const VerifyEmailView(),
+    ),
+    GoRoute(
+      path: VerifyPhoneNumView.id,
+      builder: (context, state) => const VerifyPhoneNumView(),
     ),
   ]);
 }
