@@ -238,6 +238,35 @@ class AuthRepoImpl implements AuthRepo {
       return left(FirebaseFailure(errorMessage: e.toString()));
     }
   }
+
+//phone
+  @override
+  Future<Either<Failure, void>> signInWithPhone({required String phone}) async {
+    try {
+      await auth.verifyPhoneNumber(
+        phoneNumber: phone,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException error) {},
+        codeSent: (String verificationId, int? forceResendingToken) {},
+        codeAutoRetrievalTimeout: (String verificationId) {},
+      );
+      return right(null);
+    } on FirebaseException catch (exception) {
+      return left(FirebaseFailure.fromFirebaseException(exception: exception));
+    } on PlatformException catch (e) {
+      return left(FirebaseFailure(errorMessage: e.toString()));
+    } catch (e) {
+      return left(FirebaseFailure(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> checkVerifyPhone() {
+    // TODO: implement checkVerifyPhone
+    throw UnimplementedError();
+  }
 }
 
 String generateNonce([int length = 32]) {
