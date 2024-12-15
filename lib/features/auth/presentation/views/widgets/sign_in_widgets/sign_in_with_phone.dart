@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/helper/constant.dart';
 import '../../../../../../core/utilities/AssetsData.dart';
@@ -14,8 +15,24 @@ class SignInWithPhone extends StatelessWidget {
       imageColor: kPhoneColor,
       image: AssetsData.kPhoneImage,
       errorLoadImage: AssetsData.kPhoneOfflineImage,
-      onPressed: () {},
+      onPressed: () {
+        GoRouter.of(context).push(VerifyPhoneNumView.id);
+      },
       title: 'Phone',
+    );
+  }
+}
+
+class VerifyPhoneNumView extends StatelessWidget {
+  static String id = '/verifyPhoneNumView';
+  const VerifyPhoneNumView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Verify Phone Number'),
+      ),
     );
   }
 }
