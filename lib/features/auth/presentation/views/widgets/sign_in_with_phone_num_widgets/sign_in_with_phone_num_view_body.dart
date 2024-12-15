@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utilities/text_styles.dart';
+import '../auth_widgets/filter_section.dart';
 
 class SignInWithPhoneNumViewBody extends StatelessWidget {
   const SignInWithPhoneNumViewBody({super.key});
@@ -16,6 +17,11 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
             size: 24,
           ),
         ),
+      ),
+      body: Stack(
+        children: [
+          FilterSection(), // Fixed background
+        ],
       ),
     );
   }
