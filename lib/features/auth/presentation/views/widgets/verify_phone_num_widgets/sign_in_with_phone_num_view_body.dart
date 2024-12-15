@@ -10,7 +10,7 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Verify Phone Number',
+          'Phone Number Sign In',
           style: Styles.textStyleFun(
             color: Colors.green,
             size: 24,
