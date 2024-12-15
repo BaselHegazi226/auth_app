@@ -14,6 +14,8 @@ abstract class AuthRepo {
   Future<Either<Failure, void>> forgetPassword({required String email});
   Future<Either<Failure, void>> verifyEmail();
   Future<Either<Failure, bool>> checkVerifyEmail();
+  Future<Either<Failure, void>> signInWithPhone({required String phone});
+  Future<Either<Failure, bool>> checkVerifyPhone();
   Future<Either<Failure, void>> signInWithGoogle();
   Future<Either<Failure, void>> signInWithFaceBook();
   Future<Either<Failure, void>> signInWithMac();
