@@ -12,10 +12,11 @@ class SignInPhoneNumView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(144, 238, 144, 1).withOpacity(.1),
         title: Text(
           'Phone Number Sign In',
           style: Styles.textStyleFun(
-            color: Colors.green,
+            color: Colors.white,
             size: 24,
           ),
         ),
