@@ -100,7 +100,7 @@ class CustomTextFormField extends StatelessWidget {
             fontFamily: 'ubuntuCondensed',
           ),
           errorText: errorMess,
-          fillColor: kFilledTextFormFieldColor,
+          fillColor: kFilledTextFormFieldColor.withOpacity(.18),
           filled: true,
         ),
       ),
