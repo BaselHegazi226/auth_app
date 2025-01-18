@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? errorMess;
   final void Function(String)? onChanged;
   final Color textColor;
+  final Color backgroundColor;
   // final void Function(String?)? onSaved;
 
   const CustomTextFormField({
@@ -21,6 +22,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.textEditingController,
     required this.keyboardType,
     required this.textColor,
+    this.backgroundColor = Colors.grey,
     this.obscureText = false,
     this.onChanged,
     this.prefixIcon,
@@ -100,7 +102,7 @@ class CustomTextFormField extends StatelessWidget {
             fontFamily: 'ubuntuCondensed',
           ),
           errorText: errorMess,
-          fillColor: kFilledTextFormFieldColor.withOpacity(.18),
+          fillColor: backgroundColor.withOpacity(.15),
           filled: true,
         ),
       ),
