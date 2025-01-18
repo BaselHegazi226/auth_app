@@ -24,7 +24,7 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
         Center(
           child: CustomTextFormField(
             hintText: 'Phone Number',
-            suffixIcon: Icon(
+            prefixIcon: Icon(
               Icons.phone,
               color: Colors.green,
             ),
