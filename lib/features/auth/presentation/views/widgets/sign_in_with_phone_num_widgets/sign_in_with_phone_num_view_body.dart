@@ -1,5 +1,5 @@
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
-import 'package:auth_with_firebase_application/core/utilities/custom_text_form_field.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import '../auth_widgets/filter_section.dart';
@@ -21,18 +21,9 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
         CustomBigIcon(
           iconData: Icons.phone,
         ),
-        Center(
-          child: CustomTextFormField(
-            hintText: 'Phone Number',
-            prefixIcon: Icon(
-              Icons.phone,
-              color: Colors.green,
-            ),
-            textEditingController: phoneController,
-            keyboardType: TextInputType.phone,
-            textColor: Colors.green,
-          ),
-        ) // Fixed background,)
+        PhoneTextFormField(
+          phoneController: phoneController,
+        ),
       ],
     );
   }
