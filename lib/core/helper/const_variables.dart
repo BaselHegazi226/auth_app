@@ -1,9 +1,8 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
 Color kDisableColor = Colors.grey;
-Color kFocusColor = const Color.fromRGBO(244, 143, 177, 1);
+Color kEmailFocusColor = const Color.fromRGBO(244, 143, 177, 1);
+Color kPhoneFocusColor = const Color.fromRGBO(102, 187, 106, 1);
 Color kDefaultForgetPassColor = Colors.grey;
 final Color kFocusForgetPassColor = Colors.grey.shade600;
 const IconData kDisableIconData = Icons.check_box_outline_blank_rounded;
@@ -26,36 +25,3 @@ const Color kDescriptionColor = Colors.grey;
 final Color kPhoneLeftColor = Color.fromRGBO(174, 213, 129, 1);
 final Color kPhoneCenterColor = Colors.white;
 final Color kPhoneRightColor = Color.fromRGBO(102, 187, 106, 1);
-Tuple2<IconData, Color> iconDataAndColorFun({required bool condition}) {
-  IconData iconData;
-  Color color;
-  if (condition) {
-    iconData = kEnableIconData;
-    color = kFocusColor;
-  } else {
-    iconData = kDisableIconData;
-    color = kDisableColor;
-  }
-  return Tuple2(iconData, color);
-}
-
-DialogType dialogType({required final String type}) {
-  switch (type) {
-    case 'success':
-      return DialogType.success;
-    case 'error':
-      return DialogType.error;
-    case 'info':
-      return DialogType.info;
-    case 'infoReverse':
-      return DialogType.infoReverse;
-    case 'noHeader':
-      return DialogType.noHeader;
-    case 'question':
-      return DialogType.question;
-    case 'warning':
-      return DialogType.warning;
-    default:
-      return DialogType.success;
-  }
-}
