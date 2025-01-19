@@ -18,8 +18,6 @@ class SignUpEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      height: MediaQuery.of(context).size.height * .12,
-      width: MediaQuery.of(context).size.width * .9,
       textColor: color,
       focusNode: emailFocusNode,
       validator: validator,

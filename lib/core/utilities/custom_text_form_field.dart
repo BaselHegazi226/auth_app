@@ -14,8 +14,6 @@ class CustomTextFormField extends StatelessWidget {
   final void Function(String)? onChanged;
   final Color textColor;
   final Color backgroundColor;
-  final double width;
-  final double height;
   // final void Function(String?)? onSaved;
 
   const CustomTextFormField({
@@ -32,16 +30,13 @@ class CustomTextFormField extends StatelessWidget {
     this.focusNode,
     this.validator,
     this.errorMess,
-    required this.width,
-    required this.height,
     // required this.onSaved,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width,
-      height: height,
+      width: MediaQuery.of(context).size.width * .9,
       child: TextFormField(
         onTap: () {
           FocusScope.of(context).requestFocus(focusNode);

@@ -26,8 +26,6 @@ class _SingInPasswordFieldState extends State<SingInPasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      height: MediaQuery.of(context).size.height * .12,
-      width: MediaQuery.of(context).size.width * .9,
       textColor: widget.color,
       focusNode: widget.passwordFocusNode,
       validator: widget.validator,

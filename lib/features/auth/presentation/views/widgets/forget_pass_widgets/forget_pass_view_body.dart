@@ -75,8 +75,6 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             ),
             const SizedBox(height: 16),
             CustomTextFormField(
-              height: MediaQuery.of(context).size.height * .12,
-              width: MediaQuery.of(context).size.width * .9,
               hintText: 'Email',
               focusNode: _emailFocusNode,
               textEditingController: _emailController,

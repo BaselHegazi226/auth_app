@@ -25,8 +25,6 @@ class SignUpPassword extends HookWidget {
         obscurePassword.value ? CupertinoIcons.eye : CupertinoIcons.eye_slash;
 
     return CustomTextFormField(
-      height: MediaQuery.of(context).size.height * .12,
-      width: MediaQuery.of(context).size.width * .9,
       onChanged: onChanged,
       textColor: color,
       focusNode: passwordFocusNode,
