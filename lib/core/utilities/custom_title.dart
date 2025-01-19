@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class CustomTitle extends StatelessWidget {
   const CustomTitle({
     super.key,
-    required this.buttonTitle,
+    required this.title,
     this.textColor = Colors.white,
     this.size = 24,
   });
-  final String buttonTitle;
+  final String title;
   final Color textColor;
   final double size;
   @override
@@ -16,7 +16,7 @@ class CustomTitle extends StatelessWidget {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       textAlign: TextAlign.center,
-      buttonTitle,
+      title,
       style: TextStyle(
         fontSize: size,
         color: textColor,
