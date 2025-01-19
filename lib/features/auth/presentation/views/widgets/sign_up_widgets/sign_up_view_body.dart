@@ -49,7 +49,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   } else if (!RegExp(
                           r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$')
                       .hasMatch(trimmedValue)) {
-                    return 'Please Enter A Valid Email! (abc@gmail.com)';
+                    return 'Please Enter A Valid Email! ((name+number)@gmail.com)';
                   } else if (emailErrorMessage != null) {
                     return emailErrorMessage; // Return the error message from state
                   }
@@ -63,7 +63,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 passwordFocusNode: passwordFocusNode,
                 onChanged: (value) {
                   setState(() {
-                    regExpForCheckPasswordVarsFunc(value);
+                    regExpForCheckPasswordVarsFun(value);
                   });
                 },
               ),
@@ -152,7 +152,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     passwordFocusNode.dispose();
   }
 
-  void regExpForCheckPasswordVarsFunc(String value) {
+  void regExpForCheckPasswordVarsFun(String value) {
     containsLowerCase = RegExp(r'(?=.*[a-z])').hasMatch(value);
     containsUpperCase = RegExp(r'(?=.*[A-Z])').hasMatch(value);
     containsNumbers = RegExp(r'(?=.*\d)').hasMatch(value);
