@@ -11,7 +11,7 @@ class PhoneButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextButton(
       onPressed: () {},
-      backgroundColor: kPhoneRightColor,
+      backgroundColor: kPhoneLeftColor,
       shadowColor: kPhoneLeftColor,
       child: CustomTitle(
         title: 'Send',
