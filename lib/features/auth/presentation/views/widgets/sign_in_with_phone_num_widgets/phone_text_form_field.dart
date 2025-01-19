@@ -20,6 +20,8 @@ class _PhoneTextFormFieldState extends State<PhoneTextFormField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      height: MediaQuery.of(context).size.height * .12,
+      width: MediaQuery.of(context).size.width * .9,
       hintText: 'Phone Number',
       prefixIcon: Icon(
         Icons.phone,

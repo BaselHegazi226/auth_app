@@ -26,3 +26,6 @@ const Color kDescriptionColor = Colors.grey;
 final Color kPhoneLeftColor = Color.fromRGBO(102, 187, 106, 1);
 final Color kPhoneCenterColor = Colors.white;
 final Color kPhoneRightColor = Color.fromRGBO(174, 213, 129, 1);
+final Color kOtpRightColor = Color.fromRGBO(174, 174, 174, 1); // Light grey
+final Color kOtpCenterColor = Colors.white;
+final Color kOtpLeftColor = Color.fromRGBO(102, 102, 102, 1); // Darker grey
