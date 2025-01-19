@@ -54,7 +54,7 @@ class _HomeViewButtonState extends State<HomeViewButton> {
           child: state is SignOutLoading
               ? const CustomCircleIndicator()
               : const CustomTitle(
-                  buttonTitle: 'Sign out',
+                  title: 'Sign out',
                 ),
         );
       },

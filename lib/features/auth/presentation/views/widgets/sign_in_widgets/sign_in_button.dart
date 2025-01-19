@@ -44,7 +44,7 @@ class SignInButton extends StatelessWidget {
       child: !isEnableButton
           ? const CustomCircleIndicator()
           : const CustomTitle(
-              buttonTitle: 'Sign In',
+              title: 'Sign In',
             ),
     );
   }

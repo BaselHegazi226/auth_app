@@ -103,7 +103,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       GoRouter.of(context).push(ForgetPasswordView.id);
                     },
                     child: CustomTitle(
-                      buttonTitle: 'Forget password ?',
+                      title: 'Forget password ?',
                       textColor: kFocusForgetPassColor,
                       size: 20,
                     ),

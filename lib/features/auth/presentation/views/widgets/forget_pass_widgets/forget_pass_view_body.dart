@@ -113,7 +113,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                   shadowColor: kFocusColor.withOpacity(.3),
                   child: isLoading
                       ? CustomCircleIndicator()
-                      : CustomTitle(buttonTitle: 'Reset Password'),
+                      : CustomTitle(title: 'Reset Password'),
                 );
               },
             ),

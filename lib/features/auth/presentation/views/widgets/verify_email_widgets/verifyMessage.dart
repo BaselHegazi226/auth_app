@@ -17,7 +17,7 @@ class VerifyMessage extends StatelessWidget {
         Flexible(
           child: CustomTitle(
             size: 22,
-            buttonTitle: verifyMessage,
+            title: verifyMessage,
             textColor: kFocusColor,
           ),
         ),

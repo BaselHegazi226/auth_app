@@ -28,8 +28,15 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
             phoneController: phoneController,
           ),
         ),
-        SizedBox(height: 16,),
-        CustomTextButton(onPressed: (){}, backgroundColor: Color.fromRGBO(102, 187, 106, 1),, shadowColor: Color.fromRGBO(174, 213, 129, 1),child: CustomTitle(buttonTitle: 'Send'),),
+        SizedBox(
+          height: 16,
+        ),
+        CustomTextButton(
+          onPressed: () {},
+          backgroundColor: Color.fromRGBO(102, 187, 106, 1),
+          shadowColor: Color.fromRGBO(174, 213, 129, 1),
+          child: CustomTitle(title: 'Send'),
+        ),
       ],
     );
   }

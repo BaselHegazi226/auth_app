@@ -57,7 +57,7 @@ class _VerifyEmailButtonState extends State<VerifyEmailButton> {
             shadowColor: Colors.brown.shade100,
             child: isEnableButton
                 ? const CustomTitle(
-                    buttonTitle: 'Verify',
+                    title: 'Verify',
                     size: 32,
                   )
                 : CustomCircleIndicator(),

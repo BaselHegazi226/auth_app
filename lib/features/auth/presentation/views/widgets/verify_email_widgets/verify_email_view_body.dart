@@ -97,7 +97,7 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                     isButtonEnabled ? kFocusColor : kFocusColor.withOpacity(.8),
                 shadowColor: kFocusColor.withOpacity(.5),
                 child: CustomTitle(
-                  buttonTitle: 'Send Verification Link',
+                  title: 'Send Verification Link',
                 ),
               );
             }),
