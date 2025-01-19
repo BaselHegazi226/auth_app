@@ -1,3 +1,4 @@
+import 'package:auth_with_firebase_application/core/helper/const_functions.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sign_in_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_button.dart';
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_variables.dart';
 import '../../../manager/auth_manager/auth_bloc.dart';
 //import '../../forget_password_view.dart';
 import '../../forget_password_view.dart';
@@ -58,9 +59,12 @@ class _SignInViewBodyState extends State<SignInViewBody> {
           child: Column(
             children: [
               const SizedBox(height: 16),
-              SignInEmail(
+              SignInEmailField(
                 emailController: emailController,
-                color: emailFocusNode.hasFocus ? kFocusColor : kDisableColor,
+                color: ConstFunctions.colorBackFun(
+                  condition: emailFocusNode.hasFocus,
+                  word: 'email',
+                ),
                 emailFocusNode: emailFocusNode,
                 validator: (value) {
                   String trimmedValue = value!.trim();
@@ -79,7 +83,10 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               ),
               const SizedBox(height: 16),
               SingInPasswordField(
-                color: passwordFocusNode.hasFocus ? kFocusColor : kDisableColor,
+                color: ConstFunctions.colorBackFun(
+                  condition: passwordFocusNode.hasFocus,
+                  word: 'password',
+                ),
                 passwordFocusNode: passwordFocusNode,
                 passwordController: passwordController,
                 validator: (value) {

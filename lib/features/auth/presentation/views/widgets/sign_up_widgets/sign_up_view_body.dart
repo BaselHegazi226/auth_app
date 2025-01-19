@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_functions.dart';
+import '../../../../../../core/helper/const_variables.dart';
 import 'check_password_section.dart';
 import 'sign_up_button.dart';
 import 'sign_up_email.dart';
@@ -40,7 +41,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               const SizedBox(height: 16),
               SignUpEmail(
                 textEditingController: emailController,
-                color: emailFocusNode.hasFocus ? kFocusColor : kDisableColor,
+                color: ConstFunctions.colorBackFun(
+                  condition: emailFocusNode.hasFocus,
+                  word: 'email',
+                ),
                 emailFocusNode: emailFocusNode,
                 validator: (value) {
                   String trimmedValue = value!.trim();
@@ -59,7 +63,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               const SizedBox(height: 16),
               SignUpPassword(
                 textEditingController: passwordController,
-                color: passwordFocusNode.hasFocus ? kFocusColor : kDisableColor,
+                color: ConstFunctions.colorBackFun(
+                  condition: passwordFocusNode.hasFocus,
+                  word: 'password',
+                ),
                 passwordFocusNode: passwordFocusNode,
                 onChanged: (value) {
                   setState(() {
@@ -202,7 +209,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     GoRouter.of(context).push(
       VerifyEmailView.id,
     );
-    showSnackBar(context, 'Success sign up ', kFocusColor);
+    showSnackBar(context, 'Success sign up ', kEmailFocusColor);
     onResetFun();
   }
 }
