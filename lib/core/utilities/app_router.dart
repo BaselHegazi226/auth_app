@@ -1,5 +1,6 @@
 import 'package:auth_with_firebase_application/features/auth/presentation/views/auth_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/forget_password_view.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/otp_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sign_in_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/sing_up_view.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/verify_email_view.dart';
@@ -41,6 +42,10 @@ abstract class AppRouter {
     GoRoute(
       path: SignInPhoneNumView.id,
       builder: (context, state) => const SignInPhoneNumView(),
+    ),
+    GoRoute(
+      path: OtpView.id,
+      builder: (context, state) => const OtpView(),
     ),
   ]);
 }
