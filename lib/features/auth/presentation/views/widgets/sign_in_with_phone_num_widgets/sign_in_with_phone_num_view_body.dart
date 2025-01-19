@@ -1,10 +1,9 @@
+import 'package:auth_with_firebase_application/core/helper/custom_flexible_widget.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
-import 'package:auth_with_firebase_application/core/utilities/custom_text_button.dart';
-import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
-import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import '../auth_widgets/filter_section.dart';
+import 'input_info_section.dart';
 
 class SignInWithPhoneNumViewBody extends StatelessWidget {
   SignInWithPhoneNumViewBody({super.key});
@@ -12,7 +11,6 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //center color Color.fromRGBO(144, 238, 144, 1),
     return Stack(
       children: [
         FilterSection(
@@ -20,23 +18,15 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
           centerColor: Colors.white,
           rightColor: Color.fromRGBO(102, 187, 106, 1),
         ),
-        CustomBigIcon(
+        const CustomBigIcon(
           iconData: Icons.phone,
         ),
         Center(
-          child: PhoneTextFormField(
-            phoneController: phoneController,
-          ),
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        CustomTextButton(
-          onPressed: () {},
-          backgroundColor: Color.fromRGBO(102, 187, 106, 1),
-          shadowColor: Color.fromRGBO(174, 213, 129, 1),
-          child: CustomTitle(title: 'Send'),
-        ),
+          child: CustomFlexibleWidget(
+              widget: InputInfoSection(
+            phoneEditingController: phoneController,
+          )),
+        )
       ],
     );
   }
