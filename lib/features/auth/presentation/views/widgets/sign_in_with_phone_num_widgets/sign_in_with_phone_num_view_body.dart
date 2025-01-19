@@ -21,8 +21,10 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
         CustomBigIcon(
           iconData: Icons.phone,
         ),
-        PhoneTextFormField(
-          phoneController: phoneController,
+        Center(
+          child: PhoneTextFormField(
+            phoneController: phoneController,
+          ),
         ),
       ],
     );

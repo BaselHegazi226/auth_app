@@ -16,17 +16,15 @@ class PhoneTextFormField extends StatefulWidget {
 class _PhoneTextFormFieldState extends State<PhoneTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomTextFormField(
-        hintText: 'Phone Number',
-        prefixIcon: Icon(
-          Icons.phone,
-          color: Colors.green,
-        ),
-        textEditingController: widget.phoneController,
-        keyboardType: TextInputType.phone,
-        textColor: Colors.green,
+    return CustomTextFormField(
+      hintText: 'Phone Number',
+      prefixIcon: Icon(
+        Icons.phone,
+        color: Colors.green,
       ),
+      textEditingController: widget.phoneController,
+      keyboardType: TextInputType.phone,
+      textColor: Colors.green,
     );
   }
 }
