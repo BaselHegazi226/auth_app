@@ -7,8 +7,7 @@ import '../auth_widgets/filter_section.dart';
 import 'input_info_section.dart';
 
 class SignInWithPhoneNumViewBody extends StatelessWidget {
-  SignInWithPhoneNumViewBody({super.key});
-  final TextEditingController phoneController = TextEditingController();
+  const SignInWithPhoneNumViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +23,7 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
         ),
         Center(
           child: CustomFlexibleWidget(
-            widget: InputInfoSection(
-              phoneEditingController: phoneController,
-            ),
+            widget: InputInfoSection(),
           ),
         )
       ],
