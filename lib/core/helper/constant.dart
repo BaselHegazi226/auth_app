@@ -23,6 +23,9 @@ const Color kDialogStateColor = Color(0xff00CA71);
 const Color kDialogBorderColor = Colors.white;
 const Color kDialogBackgroundColor = Colors.white;
 const Color kDescriptionColor = Colors.grey;
+final Color kPhoneLeftColor = Color.fromRGBO(174, 213, 129, 1);
+final Color kPhoneCenterColor = Colors.white;
+final Color kPhoneRightColor = Color.fromRGBO(102, 187, 106, 1);
 Tuple2<IconData, Color> iconDataAndColorFun({required bool condition}) {
   IconData iconData;
   Color color;
