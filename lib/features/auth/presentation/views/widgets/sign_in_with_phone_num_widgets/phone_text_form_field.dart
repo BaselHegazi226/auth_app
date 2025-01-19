@@ -7,42 +7,32 @@ class PhoneTextFormField extends StatefulWidget {
   const PhoneTextFormField({
     super.key,
     required this.phoneController,
+    required this.phoneFocusNode,
   });
   final TextEditingController phoneController;
+  final FocusNode phoneFocusNode;
 
   @override
   State<PhoneTextFormField> createState() => _PhoneTextFormFieldState();
 }
 
 class _PhoneTextFormFieldState extends State<PhoneTextFormField> {
-  final FocusNode phoneFocusNode = FocusNode();
-  @override
-  void initState() {
-    phoneFocusNode.addListener(() {
-      setState(() {});
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    phoneFocusNode.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
       hintText: 'Phone Number',
       prefixIcon: Icon(
         Icons.phone,
-        color: Colors.green,
+        color: ConstFunctions.colorBackFun(
+          condition: widget.phoneFocusNode.hasFocus,
+          word: 'phone',
+        ),
       ),
       textEditingController: widget.phoneController,
-      focusNode: phoneFocusNode,
-      keyboardType: TextInputType.number,
+      focusNode: widget.phoneFocusNode,
+      keyboardType: TextInputType.phone,
       textColor: ConstFunctions.colorBackFun(
-        condition: phoneFocusNode.hasFocus,
+        condition: widget.phoneFocusNode.hasFocus,
         word: 'phone',
       ),
     );
