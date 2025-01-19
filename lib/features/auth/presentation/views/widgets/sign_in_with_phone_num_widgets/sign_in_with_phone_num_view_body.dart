@@ -1,4 +1,6 @@
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
+import 'package:auth_with_firebase_application/core/utilities/custom_text_button.dart';
+import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +28,8 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
             phoneController: phoneController,
           ),
         ),
+        SizedBox(height: 16,),
+        CustomTextButton(onPressed: (){}, backgroundColor: Color.fromRGBO(102, 187, 106, 1),, shadowColor: Color.fromRGBO(174, 213, 129, 1),child: CustomTitle(buttonTitle: 'Send'),),
       ],
     );
   }
