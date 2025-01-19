@@ -54,6 +54,9 @@ class ConstFunctions {
       case 'email':
         backcolor = kEmailFocusColor;
         break;
+      case 'password':
+        backcolor = kPasswordFocusColor;
+        break;
     }
     return backcolor;
   }

@@ -1,8 +1,9 @@
-import 'package:auth_with_firebase_application/core/helper/constant.dart';
+import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:auth_with_firebase_application/core/utilities/text_styles.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
+import '../helper/const_functions.dart';
 import 'custom_text_button.dart';
 
 void customAwesomeDialog({
@@ -23,7 +24,7 @@ void customAwesomeDialog({
 }) {
   AwesomeDialog(
     context: context,
-    dialogType: dialogType(type: dialogState),
+    dialogType: ConstFunctions.dialogType(type: dialogState),
     dialogBackgroundColor: dialogBackgroundColor,
     width: double.infinity,
     buttonsBorderRadius: BorderRadius.circular(8),

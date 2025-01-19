@@ -3,7 +3,7 @@ import 'package:auth_with_firebase_application/features/auth/presentation/views/
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/helper/constant.dart';
+import '../../../../../core/helper/const_variables.dart';
 import '../../../../../core/utilities/custom_big_icon.dart';
 import '../../../../../core/utilities/dialogState.dart';
 import '../../../../auth/presentation/views/widgets/auth_widgets/filter_section.dart';
@@ -27,7 +27,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   void successAwesomeDialogInHome({required String navigateFrom}) {
     String successFrom;
-    Color awesomeDialogColor = kFocusColor;
+    Color awesomeDialogColor = kEmailFocusColor;
     //switch case to handle the different sign in methods
     switch (navigateFrom) {
       case SignInWithFacebook.id:
@@ -63,7 +63,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kFocusColor.withOpacity(.05),
+        backgroundColor: kEmailFocusColor.withOpacity(.05),
         elevation: 2,
         title: Padding(
           padding: const EdgeInsets.only(top: 32),

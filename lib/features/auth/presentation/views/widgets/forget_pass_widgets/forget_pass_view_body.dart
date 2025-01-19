@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_variables.dart';
 import '../../../../../../core/utilities/custom_text_button.dart';
 import '../../../../../../core/utilities/custom_text_form_field.dart';
 import '../../../../../../core/utilities/custom_title.dart';
@@ -42,7 +42,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kFocusColor,
+        backgroundColor: kEmailFocusColor,
         title: CustomText(
           text: 'Forget password',
           textStyle: Styles.textStyleFun(
@@ -62,14 +62,14 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             Icon(
               Icons.password,
               size: 80,
-              color: kFocusColor,
+              color: kEmailFocusColor,
             ),
             const SizedBox(height: 32),
             Text(
               maxLines: 1,
               'Enter your email To reset password',
               style: Styles.textStyleFun(
-                color: kFocusColor,
+                color: kEmailFocusColor,
                 size: 22,
               ),
             ),
@@ -81,9 +81,11 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
               keyboardType: TextInputType.text,
               prefixIcon: Icon(
                 Icons.email,
-                color: _emailFocusNode.hasFocus ? kFocusColor : kDisableColor,
+                color:
+                    _emailFocusNode.hasFocus ? kEmailFocusColor : kDisableColor,
               ),
-              textColor: _emailFocusNode.hasFocus ? kFocusColor : kDisableColor,
+              textColor:
+                  _emailFocusNode.hasFocus ? kEmailFocusColor : kDisableColor,
             ),
             const SizedBox(height: 16),
             BlocConsumer<AuthBloc, AuthStates>(
@@ -109,8 +111,8 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                             ),
                           );
                         },
-                  backgroundColor: kFocusColor,
-                  shadowColor: kFocusColor.withOpacity(.3),
+                  backgroundColor: kEmailFocusColor,
+                  shadowColor: kEmailFocusColor.withOpacity(.3),
                   child: isLoading
                       ? CustomCircleIndicator()
                       : CustomTitle(title: 'Reset Password'),
@@ -144,7 +146,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
           GoRouter.of(context).pop();
           GoRouter.of(context).pop();
           showSnackBar(context, 'Sign in with new password',
-              kFocusColor.withOpacity(.4));
+              kEmailFocusColor.withOpacity(.4));
         });
   }
 }

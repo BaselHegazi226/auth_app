@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:auth_with_firebase_application/core/helper/constant.dart';
+import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_text_button.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/verifyMessage.dart';
@@ -21,7 +21,7 @@ class VerifyEmailViewBody extends StatefulWidget {
 }
 
 class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
-  Color verifyColor = kFocusColor;
+  Color verifyColor = kEmailFocusColor;
   int counter = 30;
   Timer? timer;
   bool isButtonEnabled = false;
@@ -93,9 +93,10 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                         );
                       }
                     : null,
-                backgroundColor:
-                    isButtonEnabled ? kFocusColor : kFocusColor.withOpacity(.8),
-                shadowColor: kFocusColor.withOpacity(.5),
+                backgroundColor: isButtonEnabled
+                    ? kEmailFocusColor
+                    : kEmailFocusColor.withOpacity(.8),
+                shadowColor: kEmailFocusColor.withOpacity(.5),
                 child: CustomTitle(
                   title: 'Send Verification Link',
                 ),

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_variables.dart';
 
 class FilterSection extends StatelessWidget {
   const FilterSection({

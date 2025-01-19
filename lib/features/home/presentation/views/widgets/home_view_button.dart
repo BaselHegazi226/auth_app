@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/helper/constant.dart';
+import '../../../../../core/helper/const_variables.dart';
 import '../../../../../core/utilities/custom_circle_indicator.dart';
 import '../../../../../core/utilities/custom_text_button.dart';
 import '../../../../../core/utilities/custom_title.dart';
@@ -47,7 +47,7 @@ class _HomeViewButtonState extends State<HomeViewButton> {
         }
         return CustomTextButton(
           backgroundColor: color,
-          shadowColor: kFocusColor.withOpacity(.5),
+          shadowColor: kEmailFocusColor.withOpacity(.5),
           onPressed: () {
             BlocProvider.of<AuthBloc>(context).add(SignOutEvent());
           },
@@ -75,7 +75,7 @@ class _HomeViewButtonState extends State<HomeViewButton> {
     } else if (widget.navigateFrom == SignInWithMac.id) {
       color = kMacColor;
     } else {
-      color = kFocusColor;
+      color = kEmailFocusColor;
     }
   }
 }

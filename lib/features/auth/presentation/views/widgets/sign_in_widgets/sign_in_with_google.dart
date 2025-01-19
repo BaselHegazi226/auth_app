@@ -1,4 +1,4 @@
-import 'package:auth_with_firebase_application/core/helper/constant.dart';
+import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

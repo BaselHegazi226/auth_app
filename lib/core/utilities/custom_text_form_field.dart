@@ -1,4 +1,4 @@
-import 'package:auth_with_firebase_application/core/helper/constant.dart';
+import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {

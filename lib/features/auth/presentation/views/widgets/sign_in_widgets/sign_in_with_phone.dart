@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_variables.dart';
 import '../../../../../../core/utilities/AssetsData.dart';
 import '../../../../../../core/utilities/custom_icon_button.dart';
 import '../../sign_in_phone_num_view.dart';

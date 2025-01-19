@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Color kDisableColor = Colors.grey;
 Color kEmailFocusColor = const Color.fromRGBO(244, 143, 177, 1);
+Color kPasswordFocusColor = const Color.fromRGBO(244, 143, 177, 1);
 Color kPhoneFocusColor = const Color.fromRGBO(102, 187, 106, 1);
 Color kDefaultForgetPassColor = Colors.grey;
 final Color kFocusForgetPassColor = Colors.grey.shade600;

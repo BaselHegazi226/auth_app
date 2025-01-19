@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utilities/custom_text_form_field.dart';
 
-class SignInEmail extends StatelessWidget {
-  const SignInEmail({
+class SignInEmailField extends StatelessWidget {
+  const SignInEmailField({
     super.key,
     required this.color,
     required this.emailFocusNode,

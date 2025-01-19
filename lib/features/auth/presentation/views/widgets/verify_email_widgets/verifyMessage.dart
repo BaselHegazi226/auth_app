@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/helper/constant.dart';
+import '../../../../../../core/helper/const_variables.dart';
 import '../../../../../../core/utilities/custom_title.dart';
 
 class VerifyMessage extends StatelessWidget {
@@ -18,7 +18,7 @@ class VerifyMessage extends StatelessWidget {
           child: CustomTitle(
             size: 22,
             title: verifyMessage,
-            textColor: kFocusColor,
+            textColor: kEmailFocusColor,
           ),
         ),
         const SizedBox(
@@ -26,7 +26,7 @@ class VerifyMessage extends StatelessWidget {
         ),
         Icon(
           Icons.alarm,
-          color: kFocusColor,
+          color: kEmailFocusColor,
           size: 28,
         ),
       ],
