@@ -23,7 +23,7 @@ class _PhoneTextFormFieldState extends State<PhoneTextFormField> {
         color: Colors.green,
       ),
       textEditingController: widget.phoneController,
-      keyboardType: TextInputType.phone,
+      keyboardType: TextInputType.number,
       textColor: Colors.green,
     );
   }
