@@ -5,6 +5,9 @@ class CustomFlexibleWidget extends StatelessWidget {
   final Widget widget;
   @override
   Widget build(BuildContext context) {
+    //make the child of it move from above to down as one item
+    // or give dynamic or the size which child can take
+    // and make it scroll in this height
     return Expanded(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
