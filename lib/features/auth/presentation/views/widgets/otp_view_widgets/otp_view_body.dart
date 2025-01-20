@@ -33,7 +33,7 @@ class _OtpViewBodyState extends State<OtpViewBody> {
             leftColor: kOtpLeftColor,
           ),
           Align(
-            alignment: Alignment(0, -1.5),
+            alignment: Alignment(0, -1.3),
             child: const CustomBigIcon(iconData: Icons.verified),
           ),
           Align(
