@@ -12,11 +12,11 @@ class OtpItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormFieldOtp(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.black.withOpacity(.11),
       hintText: '',
       textEditingController: otpController,
       keyboardType: TextInputType.number,
-      textColor: kOtpCenterColor,
+      generalColor: kOtpCenterColor,
     );
   }
 }
