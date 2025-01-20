@@ -13,7 +13,7 @@ class CustomTextFormFieldOtp extends StatelessWidget {
   final String? Function(String?)? validator;
   final String? errorMess;
   final void Function(String)? onChanged;
-  final Color textColor;
+  final Color generalColor;
   final Color backgroundColor;
   // final void Function(String?)? onSaved;
 
@@ -22,7 +22,7 @@ class CustomTextFormFieldOtp extends StatelessWidget {
     required this.hintText,
     required this.textEditingController,
     required this.keyboardType,
-    required this.textColor,
+    required this.generalColor,
     this.backgroundColor = Colors.grey,
     this.obscureText = false,
     this.onChanged,
@@ -37,8 +37,8 @@ class CustomTextFormFieldOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * .155,
-      height: MediaQuery.of(context).size.height * .155,
+      width: MediaQuery.of(context).size.width * .14,
+      height: MediaQuery.of(context).size.width * .15,
       child: TextFormField(
         onTap: () {
           FocusScope.of(context).requestFocus(focusNode);
@@ -56,23 +56,30 @@ class CustomTextFormFieldOtp extends StatelessWidget {
         focusNode: focusNode, // Assigned FocusNode
         validator: validator,
         textInputAction: TextInputAction.next,
+        cursorColor: Colors.white,
+        cursorHeight: 48,
+        cursorOpacityAnimates: true,
+        cursorErrorColor: focusNode != null && focusNode!.hasFocus
+            ? generalColor // Change to focus color on error
+            : kErrorColor,
         style: TextStyle(
-          color: textColor,
+          color: generalColor,
           fontWeight: FontWeight.w800,
           fontFamily: 'cairoPlay',
+          fontSize: 48,
         ),
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           suffixStyle: TextStyle(
-            color: textColor,
+            color: generalColor,
           ),
           prefixStyle: TextStyle(
-            color: textColor,
+            color: generalColor,
           ),
           hintText: hintText,
           hintStyle: TextStyle(
-            color: textColor,
+            color: generalColor,
             fontWeight: FontWeight.w900,
             fontFamily: 'cairo',
           ),
@@ -81,27 +88,27 @@ class CustomTextFormFieldOtp extends StatelessWidget {
             color: Colors.transparent,
           ),
           enabledBorder: outlineInputBorder(
-            borderRadius: 8,
+            borderRadius: 4,
             color: Colors.transparent,
           ),
           focusedBorder: outlineInputBorder(
-            borderRadius: 8,
-            color: textColor, // Focus color applied here
+            borderRadius: 4,
+            color: generalColor, // Focus color applied here
           ),
           disabledBorder: outlineInputBorder(
-            borderRadius: 8,
+            borderRadius: 4,
             color: Colors.transparent,
           ),
           errorBorder: outlineInputBorder(
-            borderRadius: 8,
+            borderRadius: 4,
             color: focusNode != null && focusNode!.hasFocus
-                ? textColor // Change to focus color on error
+                ? generalColor // Change to focus color on error
                 : kErrorColor,
           ),
           focusedErrorBorder: outlineInputBorder(
-            borderRadius: 8,
+            borderRadius: 4,
             color: focusNode != null && focusNode!.hasFocus
-                ? textColor // Change to focus color on error
+                ? generalColor // Change to focus color on error
                 : kErrorColor,
           ),
           errorStyle: const TextStyle(
@@ -110,7 +117,7 @@ class CustomTextFormFieldOtp extends StatelessWidget {
             fontFamily: 'ubuntuCondensed',
           ),
           errorText: errorMess,
-          fillColor: backgroundColor.withOpacity(.15),
+          fillColor: backgroundColor,
           filled: true,
         ),
       ),
