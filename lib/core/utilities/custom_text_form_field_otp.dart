@@ -1,5 +1,6 @@
 import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextFormFieldOtp extends StatelessWidget {
   final TextEditingController textEditingController;
@@ -42,8 +43,14 @@ class CustomTextFormFieldOtp extends StatelessWidget {
         onTap: () {
           FocusScope.of(context).requestFocus(focusNode);
         },
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(1),
+          FilteringTextInputFormatter.singleLineFormatter,
+        ],
         // onSaved: onSaved,
-        controller: textEditingController,
+        controller: textEditingController.text.length == 1
+            ? textEditingController
+            : null,
         obscureText: obscureText,
         onChanged: onChanged,
         focusNode: focusNode, // Assigned FocusNode
