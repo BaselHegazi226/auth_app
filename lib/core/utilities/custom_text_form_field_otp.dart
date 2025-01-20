@@ -48,9 +48,7 @@ class CustomTextFormFieldOtp extends StatelessWidget {
           FilteringTextInputFormatter.singleLineFormatter,
         ],
         // onSaved: onSaved,
-        controller: textEditingController.text.length == 1
-            ? textEditingController
-            : null,
+        controller: textEditingController,
         obscureText: obscureText,
         onChanged: onChanged,
         focusNode: focusNode, // Assigned FocusNode
