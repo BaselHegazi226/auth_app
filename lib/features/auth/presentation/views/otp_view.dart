@@ -10,7 +10,7 @@ class OtpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kOtpRightColor.withOpacity(.1),
+        backgroundColor: kOtpRightColor.withOpacity(.92),
         title: Text(
           'OTP View',
           style: Styles.textStyleFun(
