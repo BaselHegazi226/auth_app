@@ -52,7 +52,7 @@ class _OtpViewBodyState extends State<OtpViewBody> {
             child: CustomTextButton(
               onPressed: () {},
               backgroundColor: Colors.grey,
-              shadowColor: Colors.grey.withOpacity(.5),
+              shadowColor: Colors.grey.withAlpha(128),
               child: CustomTitle(
                 title: 'Verify',
               ),
