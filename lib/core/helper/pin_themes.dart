@@ -13,7 +13,7 @@ class HeightWidthPinPutOtp {
 class PinThemesPinPutOtp {
   static PinTheme customPinTheme(
     BuildContext context, {
-    Color textColor = Colors.grey,
+    Color textColor = Colors.blueGrey,
     Color borderColor = Colors.transparent,
     double borderRadius = 8,
   }) {
@@ -27,7 +27,7 @@ class PinThemesPinPutOtp {
         fontFamily: 'ubuntuCondensed',
       ),
       decoration: BoxDecoration(
-        color: Colors.grey.withAlpha(32),
+        color: Colors.grey.withAlpha(64),
         border: Border.all(
           width: 2,
           color: borderColor,
