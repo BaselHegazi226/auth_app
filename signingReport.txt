@@ -1,3 +1,4 @@
+command line order : 1- cd android -->  2- ./gradlew signingReport
 > Task :sqflite:signingReport
 Variant: debugAndroidTest
 Config: debug
