@@ -2,11 +2,11 @@ import 'package:auth_with_firebase_application/core/helper/const_variables.dart'
 import 'package:auth_with_firebase_application/core/helper/custom_flexible_widget.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/auth_widgets/filter_section.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/otp_view_widgets/otp_section.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utilities/custom_text_button.dart';
 import '../../../../../../core/utilities/custom_title.dart';
-import 'otp_section.dart';
 
 class OtpViewBody extends StatefulWidget {
   const OtpViewBody({super.key});
@@ -16,12 +16,12 @@ class OtpViewBody extends StatefulWidget {
 }
 
 class _OtpViewBodyState extends State<OtpViewBody> {
-  final TextEditingController otp1 = TextEditingController();
-  final TextEditingController otp2 = TextEditingController();
-  final TextEditingController otp3 = TextEditingController();
-  final TextEditingController otp4 = TextEditingController();
-  final TextEditingController otp5 = TextEditingController();
-  final TextEditingController otp6 = TextEditingController();
+  // final TextEditingController otp1 = TextEditingController();
+  // final TextEditingController otp2 = TextEditingController();
+  // final TextEditingController otp3 = TextEditingController();
+  // final TextEditingController otp4 = TextEditingController();
+  // final TextEditingController otp5 = TextEditingController();
+  // final TextEditingController otp6 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomFlexibleWidget(
@@ -33,22 +33,14 @@ class _OtpViewBodyState extends State<OtpViewBody> {
             leftColor: kOtpLeftColor,
           ),
           Align(
-            alignment: Alignment(0, -1.3),
+            alignment: Alignment(0, -.8),
             child: const CustomBigIcon(iconData: Icons.verified),
           ),
-          Align(
-            alignment: Alignment(0, -.3),
-            child: OtpSection(
-              otp1: otp1,
-              otp2: otp2,
-              otp3: otp3,
-              otp4: otp4,
-              otp5: otp5,
-              otp6: otp6,
-            ),
+          Center(
+            child: OtpSection(),
           ),
           Align(
-            alignment: Alignment(0, -.05),
+            alignment: Alignment(0, -.4),
             child: CustomTextButton(
               onPressed: () {},
               backgroundColor: Colors.grey,
