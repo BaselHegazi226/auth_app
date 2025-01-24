@@ -1,9 +1,9 @@
 import 'package:auth_with_firebase_application/core/utilities/app_get.dart';
+import 'package:auth_with_firebase_application/features/my_app/presentation/view/my_ap.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'core/utilities/firebase_options.dart';
-import 'features/my_app/presentation/view/my_ap.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
