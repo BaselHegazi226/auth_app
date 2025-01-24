@@ -10,7 +10,7 @@ class HeightWidthPinPutOtp {
   }
 }
 
-class PinThemes {
+class PinThemesPinPutOtp {
   static PinTheme customPinTheme(
     BuildContext context, {
     required double height,
