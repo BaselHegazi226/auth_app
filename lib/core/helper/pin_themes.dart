@@ -4,8 +4,8 @@ import 'package:pinput/pinput.dart';
 
 class HeightWidthPinPutOtp {
   static Tuple2<double, double> backSizeFun(BuildContext context) {
-    final double height = MediaQuery.sizeOf(context).height * .07;
-    final double width = MediaQuery.sizeOf(context).width * .15;
+    final double height = MediaQuery.sizeOf(context).height * .06;
+    final double width = MediaQuery.sizeOf(context).width * .13;
     return Tuple2(height, width);
   }
 }
