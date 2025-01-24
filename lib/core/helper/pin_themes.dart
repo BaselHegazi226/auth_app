@@ -13,24 +13,21 @@ class HeightWidthPinPutOtp {
 class PinThemesPinPutOtp {
   static PinTheme customPinTheme(
     BuildContext context, {
-    required double height,
-    required double width,
-    required double fontSize,
-    required Color textColor,
-    required Color backgroundColor,
-    required Color borderColor,
-    required double borderRadius,
+    Color textColor = Colors.grey,
+    Color borderColor = Colors.transparent,
+    double borderRadius = 8,
   }) {
     return PinTheme(
-      height: height,
-      width: width,
+      height: HeightWidthPinPutOtp.backSizeFun(context).value1,
+      width: HeightWidthPinPutOtp.backSizeFun(context).value2,
       textStyle: TextStyle(
-        fontSize: fontSize,
+        fontSize: 24,
         color: textColor,
         fontWeight: FontWeight.w600,
+        fontFamily: 'ubuntuCondensed',
       ),
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: Colors.grey.withAlpha(32),
         border: Border.all(
           width: 2,
           color: borderColor,
