@@ -270,7 +270,7 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, bool>> checkVerifyPhone() {
+  Future<Either<Failure, bool>> checkVerifyPhone({required String otp}) {
     // TODO: implement checkVerifyPhone
     throw UnimplementedError();
   }
