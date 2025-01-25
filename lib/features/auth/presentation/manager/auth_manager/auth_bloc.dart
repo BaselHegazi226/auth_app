@@ -107,6 +107,8 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
     on<SignInWithGoogleEvent>(_onSignInWithGoogle);
     on<SignInWithFacebookEvent>(_onSignInWithFacebook);
     on<SignInWithMacEvent>(_onSignInWithMac);
+    on<SignInWithPhoneEvent>(_onSignInWithPhoneNumber);
+    on<VerifyPhoneEvent>(_onVerifyPhoneNumber);
   }
 
   Future<void> _onSignInWithGoogle(
@@ -132,6 +134,10 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
     });
   }
 
+  Future<void> _onSignInWithPhoneNumber(
+      SignInWithPhoneEvent event, Emitter<AuthStates> emit) async {}
+  Future<void> _onVerifyPhoneNumber(
+      VerifyPhoneEvent event, Emitter<AuthStates> emit) async {}
   Future<void> _onSignInWithMac(
       SignInWithMacEvent event, Emitter<AuthStates> emit) async {
     emit(SignInWithMacLoading());
