@@ -30,6 +30,8 @@ class SignInWithPhoneEvent extends AuthEvent {
 
 class VerifyEmailEvent extends AuthEvent {}
 
+class VerifyPhoneEvent extends AuthEvent {}
+
 class ForgetPasswordEvent extends AuthEvent {
   final String email;
   ForgetPasswordEvent({required this.email});
