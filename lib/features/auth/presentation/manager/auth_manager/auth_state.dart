@@ -144,3 +144,17 @@ class SignInWithPhoneFailure extends AuthStates {
 }
 
 class SignInWithPhoneLoading extends AuthStates {}
+
+//verify phone after sign in with phone
+class VerifyPhoneInitial extends AuthStates {}
+
+class VerifyPhoneSuccess extends AuthStates {}
+
+class VerifyPhoneFailure extends AuthStates {
+  final String errorMessage;
+  VerifyPhoneFailure({
+    required this.errorMessage,
+  });
+}
+
+class VerifyPhoneLoading extends AuthStates {}
