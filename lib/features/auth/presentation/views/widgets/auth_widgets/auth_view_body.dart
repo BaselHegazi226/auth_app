@@ -13,8 +13,9 @@ class AuthViewBody extends StatelessWidget {
     return Stack(
       children: [
         FilterSection(), // Fixed background
-        const CustomBigIcon(
+        CustomBigIcon(
           iconData: Icons.lock,
+          iconColor: Colors.white.withAlpha(128),
         ),
         Column(
           children: [
