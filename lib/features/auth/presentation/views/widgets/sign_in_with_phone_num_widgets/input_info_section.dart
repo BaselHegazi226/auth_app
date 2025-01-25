@@ -1,9 +1,12 @@
-import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_button.dart';
+import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_number_view_text_section.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/phone_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/helper/const_functions.dart';
-import '../../../../../../core/utilities/text_styles.dart';
+import '../../../../../../core/helper/const_variables.dart';
+import '../../../../../../core/utilities/custom_text_button.dart';
+import '../../../../../../core/utilities/custom_title.dart';
+import '../../otp_view.dart';
 
 class InputInfoSection extends StatefulWidget {
   const InputInfoSection({super.key});
@@ -39,25 +42,8 @@ class _InputInfoSectionState extends State<InputInfoSection> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 24,
-              ),
-              child: Text(
-                "Enter your phone number",
-                style: Styles.textStyleFun(
-                  color: ConstFunctions.colorBackFun(
-                    condition: phoneFocusNode.hasFocus,
-                    word: 'phone',
-                  ),
-                  size: MediaQuery.of(context).size.width * .045,
-                ).copyWith(
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
+          PhoneNumberViewTextSection(
+            phoneFocusNode: phoneFocusNode,
           ),
           SizedBox(
             height: 16,
@@ -65,11 +51,32 @@ class _InputInfoSectionState extends State<InputInfoSection> {
           PhoneTextFormField(
             phoneController: phoneEditingController,
             phoneFocusNode: phoneFocusNode,
+            validator: (value) {
+              String phone = "+2${value!.trim()}";
+              if (phone.length != 13 && !phone.startsWith('+20')) {
+                return 'Invalid Number';
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(
             height: 24,
           ),
-          PhoneButton(),
+          CustomTextButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                GoRouter.of(context).push(
+                  OtpView.id,
+                );
+              }
+            },
+            backgroundColor: kPhoneLeftColor,
+            shadowColor: kPhoneLeftColor,
+            child: CustomTitle(
+              title: 'Verify Phone Number',
+            ),
+          ),
         ],
       ),
     );
