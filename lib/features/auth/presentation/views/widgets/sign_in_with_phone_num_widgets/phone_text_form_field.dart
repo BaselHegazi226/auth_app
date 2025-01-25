@@ -8,10 +8,11 @@ class PhoneTextFormField extends StatefulWidget {
     super.key,
     required this.phoneController,
     required this.phoneFocusNode,
+    required this.validator,
   });
   final TextEditingController phoneController;
   final FocusNode phoneFocusNode;
-
+  final String? Function(String?)? validator;
   @override
   State<PhoneTextFormField> createState() => _PhoneTextFormFieldState();
 }
@@ -35,6 +36,7 @@ class _PhoneTextFormFieldState extends State<PhoneTextFormField> {
         condition: widget.phoneFocusNode.hasFocus,
         word: 'phone',
       ),
+      validator: widget.validator,
     );
   }
 }
