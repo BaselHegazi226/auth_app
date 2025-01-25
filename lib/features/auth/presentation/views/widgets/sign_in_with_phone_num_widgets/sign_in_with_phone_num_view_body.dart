@@ -18,8 +18,9 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
           centerColor: kPhoneCenterColor,
           rightColor: kPhoneRightColor,
         ),
-        const CustomBigIcon(
+        CustomBigIcon(
           iconData: Icons.phone,
+          iconColor: Colors.white.withAlpha(128),
         ),
         Center(
           child: CustomFlexibleWidget(
