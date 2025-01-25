@@ -134,10 +134,6 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
     });
   }
 
-  Future<void> _onSignInWithPhoneNumber(
-      SignInWithPhoneEvent event, Emitter<AuthStates> emit) async {}
-  Future<void> _onVerifyPhoneNumber(
-      VerifyPhoneEvent event, Emitter<AuthStates> emit) async {}
   Future<void> _onSignInWithMac(
       SignInWithMacEvent event, Emitter<AuthStates> emit) async {
     emit(SignInWithMacLoading());
@@ -148,4 +144,18 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
       return emit(SignInWithMacSuccess());
     });
   }
+
+  Future<void> _onSignInWithPhoneNumber(
+      SignInWithPhoneEvent event, Emitter<AuthStates> emit) async {
+    emit(SignInWithPhoneLoading());
+    var result = await authRepo.signInWithPhone(phone: event.phoneNumber);
+    result.fold((error) {
+      emit(SignInWithFacebookFailure(errorMessage: error.errorMessage));
+    }, (success) {
+      emit(SignInWithPhoneSuccess());
+    });
+  }
+
+  Future<void> _onVerifyPhoneNumber(
+      VerifyPhoneEvent event, Emitter<AuthStates> emit) async {}
 }
