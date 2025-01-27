@@ -22,12 +22,10 @@ class SignUpEvent extends AuthEvent {
 class SignInWithGoogleEvent extends AuthEvent {}
 
 class SignInWithPhoneEvent extends AuthEvent {
-  final PhoneAuthCredential phoneAuthCredential;
   final String phoneNumber, smsCode;
   SignInWithPhoneEvent({
     required this.phoneNumber,
     required this.smsCode,
-    required this.phoneAuthCredential,
   });
 }
 
