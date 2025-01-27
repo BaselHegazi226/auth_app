@@ -241,28 +241,28 @@ class AuthRepoImpl implements AuthRepo {
 
 //phone
   @override
-  Future<Either<Failure, PhoneAuthCredential>> signInWithPhoneNumber(
-      {required String phone, required String? smsCode}) async {
-    PhoneAuthCredential? credential;
+  Future<Either<Failure, String>> signInWithPhoneNumber(
+      {required String phone}) async {
+    PhoneAuthCredential? phoneAuthCredential;
+    String? verifyId;
     try {
       await auth.verifyPhoneNumber(
         phoneNumber: phone,
         verificationCompleted: (PhoneAuthCredential credential) async {
-          await auth.signInWithCredential(credential);
+          phoneAuthCredential = credential;
+          await auth.signInWithCredential(phoneAuthCredential!);
         },
-        verificationFailed: (FirebaseAuthException error) {},
+        verificationFailed: (FirebaseAuthException error) {
+          throw FirebaseFailure.fromFirebaseException(exception: error);
+        },
         codeSent: (String verificationId, int? forceResendingToken) async {
-          // Create a PhoneAuthCredential with the code
-          credential = PhoneAuthProvider.credential(
-              verificationId: verificationId, smsCode: smsCode!);
-          // Sign the user in (or link) with the credential
-          await auth.signInWithCredential(credential!);
+          verifyId = verificationId;
         },
-        codeAutoRetrievalTimeout: (String verificationId) {},
+        codeAutoRetrievalTimeout: (String verificationId) {
+          verifyId = verificationId;
+        },
       );
-      return right(PhoneAuthProvider.credential(
-          verificationId: credential!.verificationId!,
-          smsCode: credential!.smsCode!));
+      return right(verifyId!);
     } on FirebaseException catch (exception) {
       return left(FirebaseFailure.fromFirebaseException(exception: exception));
     } on PlatformException catch (e) {
