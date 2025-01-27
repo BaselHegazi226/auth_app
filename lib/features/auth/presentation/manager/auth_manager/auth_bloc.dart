@@ -150,14 +150,13 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
     emit(SignInWithPhoneLoading());
     var result = await authRepo.signInWithPhoneNumber(
       phone: event.phoneNumber,
-      smsCode: event.smsCode,
     );
     result.fold((error) {
-      emit(SignInWithFacebookFailure(errorMessage: error.errorMessage));
-    }, (success) {
+      emit(SignInWithPhoneFailure(errorMessage: error.errorMessage));
+    }, (verifyIdSuccess) {
       emit(SignInWithPhoneSuccess(
         phone: event.phoneNumber,
-        smsCode: event.smsCode,
+        verifyId: verifyIdSuccess,
       ));
     });
   }
