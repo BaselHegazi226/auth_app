@@ -241,7 +241,9 @@ class AuthRepoImpl implements AuthRepo {
 
 //phone
   @override
-  Future<Either<Failure, void>> signInWithPhone({required String phone}) async {
+  Future<Either<Failure, PhoneAuthCredential>> signInWithPhone(
+      {required String phone, required String? smsCode}) async {
+    PhoneAuthCredential? credential;
     try {
       await auth.verifyPhoneNumber(
         phoneNumber: phone,
@@ -250,16 +252,17 @@ class AuthRepoImpl implements AuthRepo {
         },
         verificationFailed: (FirebaseAuthException error) {},
         codeSent: (String verificationId, int? forceResendingToken) async {
-          String smsCode = 'xxxx';
           // Create a PhoneAuthCredential with the code
-          PhoneAuthCredential credential = PhoneAuthProvider.credential(
-              verificationId: verificationId, smsCode: smsCode);
+          credential = PhoneAuthProvider.credential(
+              verificationId: verificationId, smsCode: smsCode!);
           // Sign the user in (or link) with the credential
-          await auth.signInWithCredential(credential);
+          await auth.signInWithCredential(credential!);
         },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
-      return right(null);
+      return right(PhoneAuthProvider.credential(
+          verificationId: credential!.verificationId!,
+          smsCode: credential!.smsCode!));
     } on FirebaseException catch (exception) {
       return left(FirebaseFailure.fromFirebaseException(exception: exception));
     } on PlatformException catch (e) {
@@ -270,9 +273,20 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, bool>> checkVerifyPhone({required String otp}) {
-    // TODO: implement checkVerifyPhone
-    throw UnimplementedError();
+  Future<Either<Failure, bool>> verifyPhoneNumber(
+      {required String verifyId, required String smsCode}) async {
+    try {
+      PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
+          verificationId: verifyId, smsCode: smsCode);
+      await auth.signInWithCredential(phoneAuthCredential);
+      return right(true);
+    } on FirebaseException catch (exception) {
+      return left(FirebaseFailure.fromFirebaseException(exception: exception));
+    } on PlatformException catch (e) {
+      return left(FirebaseFailure(errorMessage: e.toString()));
+    } catch (e) {
+      return left(FirebaseFailure(errorMessage: e.toString()));
+    }
   }
 }
 
