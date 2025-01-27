@@ -1,8 +1,12 @@
 import 'package:auth_with_firebase_application/core/helper/custom_flexible_widget.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/helper/const_variables.dart';
+import '../../../../../../core/utilities/app_get.dart';
+import '../../../../data/repos/auth_repo/auth_repo_impl.dart';
+import '../../../manager/auth_manager/auth_bloc.dart';
 import '../auth_widgets/filter_section.dart';
 import 'input_info_section.dart';
 
@@ -24,9 +28,14 @@ class SignInWithPhoneNumViewBody extends StatelessWidget {
         ),
         Center(
           child: CustomFlexibleWidget(
-            widget: InputInfoSection(),
+            widget: BlocProvider(
+              create: (context) => AuthSocialBloc(
+                authRepo: AppGet.getIt.get<AuthRepoImpl>(),
+              ),
+              child: InputInfoSection(),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
