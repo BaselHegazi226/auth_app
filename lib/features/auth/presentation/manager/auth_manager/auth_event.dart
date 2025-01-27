@@ -22,15 +22,19 @@ class SignUpEvent extends AuthEvent {
 class SignInWithGoogleEvent extends AuthEvent {}
 
 class SignInWithPhoneEvent extends AuthEvent {
-  final String phoneNumber;
+  final String phoneNumber, smsCode;
   SignInWithPhoneEvent({
     required this.phoneNumber,
+    required this.smsCode,
   });
 }
 
-class VerifyEmailEvent extends AuthEvent {}
+class VerifyPhoneNumberEvent extends AuthEvent {
+  final String verifyId, smsCode;
+  VerifyPhoneNumberEvent({required this.verifyId, required this.smsCode});
+}
 
-class VerifyPhoneEvent extends AuthEvent {}
+class VerifyEmailEvent extends AuthEvent {}
 
 class ForgetPasswordEvent extends AuthEvent {
   final String email;
