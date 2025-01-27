@@ -135,10 +135,10 @@ class ForgetPasswordLoading extends AuthStates {}
 class SignInWithPhoneInitial extends AuthStates {}
 
 class SignInWithPhoneSuccess extends AuthStates {
-  final String phone, smsCode;
+  final String phone, verifyId;
   SignInWithPhoneSuccess({
     required this.phone,
-    required this.smsCode,
+    required this.verifyId,
   });
 }
 
