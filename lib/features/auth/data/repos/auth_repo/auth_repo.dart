@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../../core/error/failure.dart';
 
@@ -15,8 +14,8 @@ abstract class AuthRepo {
   Future<Either<Failure, void>> forgetPassword({required String email});
   Future<Either<Failure, void>> verifyEmail();
   Future<Either<Failure, bool>> checkVerifyEmail();
-  Future<Either<Failure, PhoneAuthCredential>> signInWithPhoneNumber(
-      {required String phone, required String? smsCode});
+  Future<Either<Failure, String>> signInWithPhoneNumber(
+      {required String phone});
   Future<Either<Failure, bool>> verifyPhoneNumber(
       {required String verifyId, required String smsCode});
   Future<Either<Failure, void>> signInWithGoogle();
