@@ -15,7 +15,7 @@ abstract class AuthRepo {
   Future<Either<Failure, void>> forgetPassword({required String email});
   Future<Either<Failure, void>> verifyEmail();
   Future<Either<Failure, bool>> checkVerifyEmail();
-  Future<Either<Failure, PhoneAuthCredential>> signInWithPhone(
+  Future<Either<Failure, PhoneAuthCredential>> signInWithPhoneNumber(
       {required String phone, required String? smsCode});
   Future<Either<Failure, bool>> verifyPhoneNumber(
       {required String verifyId, required String smsCode});

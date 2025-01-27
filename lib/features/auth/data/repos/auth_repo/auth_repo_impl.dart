@@ -241,7 +241,7 @@ class AuthRepoImpl implements AuthRepo {
 
 //phone
   @override
-  Future<Either<Failure, PhoneAuthCredential>> signInWithPhone(
+  Future<Either<Failure, PhoneAuthCredential>> signInWithPhoneNumber(
       {required String phone, required String? smsCode}) async {
     PhoneAuthCredential? credential;
     try {

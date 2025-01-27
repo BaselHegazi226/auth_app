@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -149,7 +148,7 @@ class AuthSocialBloc extends Bloc<AuthEvent, AuthStates> {
   Future<void> _onSignInWithPhoneNumber(
       SignInWithPhoneEvent event, Emitter<AuthStates> emit) async {
     emit(SignInWithPhoneLoading());
-    var result = await authRepo.signInWithPhone(
+    var result = await authRepo.signInWithPhoneNumber(
       phone: event.phoneNumber,
       smsCode: event.smsCode,
     );
