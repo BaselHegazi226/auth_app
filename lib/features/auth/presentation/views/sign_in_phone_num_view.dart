@@ -1,7 +1,11 @@
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_with_phone_num_widgets/sign_in_with_phone_num_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utilities/app_get.dart';
 import '../../../../core/utilities/text_styles.dart';
+import '../../data/repos/auth_repo/auth_repo_impl.dart';
+import '../manager/auth_manager/auth_bloc.dart';
 
 class SignInPhoneNumView extends StatelessWidget {
   static String id = '/signInPhoneNumView';
@@ -24,7 +28,12 @@ class SignInPhoneNumView extends StatelessWidget {
           ),
         ),
       ),
-      body: SignInWithPhoneNumViewBody(),
+      body: BlocProvider(
+        create: (context) => AuthSocialBloc(
+          authRepo: AppGet.getIt.get<AuthRepoImpl>(),
+        ),
+        child: SignInWithPhoneNumViewBody(),
+      ),
     );
   }
 }
