@@ -1,4 +1,3 @@
-import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -28,7 +27,7 @@ class PinThemesPinPutOtpClass {
         fontFamily: 'ubuntuCondensed',
       ),
       decoration: BoxDecoration(
-        color: kOtpLeftColor.withAlpha(80),
+        color: Colors.grey.withAlpha(40),
         border: Border.all(
           width: 2,
           color: borderColor,
