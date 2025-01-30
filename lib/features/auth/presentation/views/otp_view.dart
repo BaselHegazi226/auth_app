@@ -1,7 +1,11 @@
 import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:auth_with_firebase_application/core/utilities/text_styles.dart';
-import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/otp_view_widgets/otp_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/utilities/app_get.dart';
+import '../../data/repos/auth_repo/auth_repo_impl.dart';
+import '../manager/auth_manager/auth_bloc.dart';
 
 class OtpView extends StatelessWidget {
   const OtpView({super.key});
@@ -22,7 +26,12 @@ class OtpView extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      body: OtpViewBody(),
+      body: BlocProvider(
+        create: (context) => AuthSocialBloc(
+          authRepo: AppGet.getIt.get<AuthRepoImpl>(),
+        ),
+        child: OtpView(),
+      ),
     );
   }
 }
