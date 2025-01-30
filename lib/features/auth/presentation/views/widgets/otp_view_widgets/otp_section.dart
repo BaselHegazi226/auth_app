@@ -45,15 +45,3 @@
 //     );
 //   }
 // }
-import 'package:auth_with_firebase_application/core/utilities/custom_text_form_field_otp.dart';
-import 'package:flutter/material.dart';
-
-class OtpSection extends StatelessWidget {
-  const OtpSection({
-    super.key,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return CustomTextFormFieldOtpPinPut();
-  }
-}
