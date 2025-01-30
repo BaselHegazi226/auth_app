@@ -12,7 +12,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/helper/const_variables.dart';
 import '../../../manager/auth_manager/auth_bloc.dart';
-//import '../../forget_password_view.dart';
 import '../../forget_password_view.dart';
 import 'or_sign_in_with.dart';
 import 'other_sign_in.dart';
