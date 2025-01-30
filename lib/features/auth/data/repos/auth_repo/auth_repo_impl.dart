@@ -251,23 +251,30 @@ class AuthRepoImpl implements AuthRepo {
         verificationCompleted: (PhoneAuthCredential credential) async {
           phoneAuthCredential = credential;
           await auth.signInWithCredential(phoneAuthCredential!);
+          print('verification completed success');
         },
         verificationFailed: (FirebaseAuthException error) {
           throw FirebaseFailure.fromFirebaseException(exception: error);
         },
         codeSent: (String verificationId, int? forceResendingToken) async {
           verifyId = verificationId;
+          print('codeSent success');
         },
         codeAutoRetrievalTimeout: (String verificationId) {
           verifyId = verificationId;
+          print('codeAutoRetrievalTimeout success');
         },
+        forceResendingToken: null,
       );
       return right(verifyId!);
     } on FirebaseException catch (exception) {
+      print('FirebaseException happens');
       return left(FirebaseFailure.fromFirebaseException(exception: exception));
     } on PlatformException catch (e) {
+      print('PlatformException happens');
       return left(FirebaseFailure(errorMessage: e.toString()));
     } catch (e) {
+      print('error happens');
       return left(FirebaseFailure(errorMessage: e.toString()));
     }
   }
