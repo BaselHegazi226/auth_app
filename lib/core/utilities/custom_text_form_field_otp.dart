@@ -4,29 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
 class CustomTextFormFieldOtpPinPut extends StatelessWidget {
-  const CustomTextFormFieldOtpPinPut({super.key, this.pinCount = 4});
+  const CustomTextFormFieldOtpPinPut({
+    super.key,
+    this.pinCount = 4,
+    required this.validator,
+  });
   final int pinCount;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Pinput(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       length: pinCount,
-      defaultPinTheme: PinThemesPinPutOtp.customPinTheme(context),
-      disabledPinTheme: PinThemesPinPutOtp.customPinTheme(context),
-      focusedPinTheme: PinThemesPinPutOtp.customPinTheme(
+      defaultPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(context),
+      disabledPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(context),
+      focusedPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(
         context,
-        borderColor: Colors.grey,
+        borderColor: kOtpLeftColor,
       ),
-      errorPinTheme: PinThemesPinPutOtp.customPinTheme(
+      errorPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(
         context,
         borderColor: kErrorColor,
       ),
       pinContentAlignment: Alignment.center,
       pinAnimationType: PinAnimationType.rotation,
-      validator: (s) {
-        return s == '222222' ? null : 'Pin is incorrect';
-      },
+      validator: validator,
       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
       showCursor: true,
       onCompleted: (pin) => print(pin),
