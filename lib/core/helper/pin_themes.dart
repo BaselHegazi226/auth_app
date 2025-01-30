@@ -1,3 +1,4 @@
+import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -10,8 +11,8 @@ class HeightWidthPinPutOtp {
   }
 }
 
-class PinThemesPinPutOtp {
-  static PinTheme customPinTheme(
+class PinThemesPinPutOtpClass {
+  static PinTheme customPinThemeFunc(
     BuildContext context, {
     Color textColor = Colors.blueGrey,
     Color borderColor = Colors.transparent,
@@ -27,7 +28,7 @@ class PinThemesPinPutOtp {
         fontFamily: 'ubuntuCondensed',
       ),
       decoration: BoxDecoration(
-        color: Colors.grey.withAlpha(64),
+        color: kOtpLeftColor.withAlpha(80),
         border: Border.all(
           width: 2,
           color: borderColor,
