@@ -26,30 +26,31 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   }
 
   void successAwesomeDialogInHome({required String navigateFrom}) {
-    String successFrom;
-    Color awesomeDialogColor = kEmailFocusColor;
-    //switch case to handle the different sign in methods
-    switch (navigateFrom) {
-      case SignInWithFacebook.id:
-        successFrom = 'Facebook';
-        awesomeDialogColor = kFacebookColor;
-        break;
-      case SignInWithGoogle.id:
-        successFrom = 'Google';
-        awesomeDialogColor = kGoogleColor;
-        break;
-      default:
-        successFrom = 'Gmail';
-    }
-//awesome dialog to show the animation refer to switch case
+    final signInMethods = {
+      SignInWithFacebook.id: {
+        'name': 'Facebook',
+        'color': kFacebookColor,
+      },
+      SignInWithGoogle.id: {
+        'name': 'Google',
+        'color': kGoogleColor,
+      },
+    };
+
+    final method = signInMethods[navigateFrom] ??
+        {
+          'name': 'Gmail',
+          'color': kEmailFocusColor,
+        };
+
     customAwesomeDialog(
       context: context,
-      title: 'Success Sign In With $successFrom',
+      title: 'Success Sign In With ${method['name']}',
       description: 'Welcome to the Home!',
       dialogState: 'success',
-      dialogBorderColor: awesomeDialogColor,
-      dialogStateColor: awesomeDialogColor,
-      titleColor: awesomeDialogColor,
+      dialogBorderColor: method['color'] as Color,
+      dialogStateColor: method['color'] as Color,
+      titleColor: method['color'] as Color,
       onCancelPressed: () {
         Navigator.of(context).pop(); // Close the dialog
       },
@@ -99,3 +100,39 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
+
+/*
+void successAwesomeDialogInHome({required String navigateFrom}) {
+    String successFrom;
+    Color awesomeDialogColor = kEmailFocusColor;
+    //switch case to handle the different sign in methods
+    switch (navigateFrom) {
+      case SignInWithFacebook.id:
+        successFrom = 'Facebook';
+        awesomeDialogColor = kFacebookColor;
+        break;
+      case SignInWithGoogle.id:
+        successFrom = 'Google';
+        awesomeDialogColor = kGoogleColor;
+        break;
+      default:
+        successFrom = 'Gmail';
+    }
+//awesome dialog to show the animation refer to switch case
+    customAwesomeDialog(
+      context: context,
+      title: 'Success Sign In With $successFrom',
+      description: 'Welcome to the Home!',
+      dialogState: 'success',
+      dialogBorderColor: awesomeDialogColor,
+      dialogStateColor: awesomeDialogColor,
+      titleColor: awesomeDialogColor,
+      onCancelPressed: () {
+        Navigator.of(context).pop(); // Close the dialog
+      },
+      onSuccessPressed: () {
+        Navigator.of(context).pop(); // Close the dialog
+      },
+    );
+  }
+ */
