@@ -1,27 +1,14 @@
 import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:auth_with_firebase_application/core/helper/custom_flexible_widget.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_big_icon.dart';
-import 'package:auth_with_firebase_application/core/utilities/custom_text_form_field_otp.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/auth_widgets/filter_section.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utilities/custom_text_button.dart';
-import '../../../../../../core/utilities/custom_title.dart';
+import 'otp_input_info_section.dart';
 
-class OtpViewBody extends StatefulWidget {
+class OtpViewBody extends StatelessWidget {
   const OtpViewBody({super.key});
 
-  @override
-  State<OtpViewBody> createState() => _OtpViewBodyState();
-}
-
-class _OtpViewBodyState extends State<OtpViewBody> {
-  // final TextEditingController otp1 = TextEditingController();
-  // final TextEditingController otp2 = TextEditingController();
-  // final TextEditingController otp3 = TextEditingController();
-  // final TextEditingController otp4 = TextEditingController();
-  // final TextEditingController otp5 = TextEditingController();
-  // final TextEditingController otp6 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CustomFlexibleWidget(
@@ -39,61 +26,9 @@ class _OtpViewBodyState extends State<OtpViewBody> {
               iconColor: Colors.white.withAlpha(200),
             ),
           ),
-          Align(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 32,
-                children: [
-                  CustomTextFormFieldOtpPinPut(
-                    pinCount: 6,
-                  ),
-                  CustomTextButton(
-                    onPressed: () {},
-                    backgroundColor: Colors.grey,
-                    shadowColor: Colors.grey.withAlpha(128),
-                    child: CustomTitle(
-                      title: 'Verify',
-                    ),
-                  ),
-                ],
-              )),
+          OtpInputInfoSection(),
         ],
       ),
     );
-
-    // return Center(
-    //   child: Stack(
-    //     children: [
-    //       FilterSection(
-    //         rightColor: kOtpRightColor,
-    //         centerColor: kOtpCenterColor,
-    //         leftColor: kOtpLeftColor,
-    //       ),
-    //       Align(
-    //         alignment: Alignment(0, -1),
-    //         child: const CustomBigIcon(
-    //           iconData: Icons.verified,
-    //           iconColor: Colors.grey,
-    //         ),
-    //       ),
-    //       Align(
-    //         alignment: Alignment(0, 0),
-    //         child: CustomTextFormFieldOtpPinPut(),
-    //       ),
-    //       Align(
-    //         alignment: Alignment(0, -.05),
-    //         child: CustomTextButton(
-    //           onPressed: () {},
-    //           backgroundColor: Colors.grey,
-    //           shadowColor: Colors.grey.withAlpha(128),
-    //           child: CustomTitle(
-    //             title: 'Verify',
-    //           ),
-    //         ),
-    //       ),
-    //     ],
-    //   ),
-//    );
   }
 }
