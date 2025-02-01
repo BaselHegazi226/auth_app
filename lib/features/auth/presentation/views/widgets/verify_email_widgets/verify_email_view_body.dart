@@ -1,12 +1,15 @@
 import 'dart:async';
 
+import 'package:auth_with_firebase_application/core/helper/const_functions.dart';
 import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_text_button.dart';
 import 'package:auth_with_firebase_application/core/utilities/custom_title.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/verifyMessage.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/verify_email_widgets/visibility_verification_message.dart';
+import 'package:auth_with_firebase_application/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utilities/show_snack_bar.dart';
 import '../../../../../../core/utilities/text_styles.dart';
@@ -93,10 +96,11 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                         );
                       }
                     : null,
-                backgroundColor: isButtonEnabled
-                    ? kEmailFocusColor
-                    : kEmailFocusColor.withOpacity(.8),
-                shadowColor: kEmailFocusColor.withOpacity(.5),
+                backgroundColor: ConstFunctions.colorBackFun(
+                  condition: isButtonEnabled,
+                  word: 'email',
+                ),
+                shadowColor: kEmailFocusColor.withAlpha(128),
                 child: CustomTitle(
                   title: 'Send Verification Link',
                 ),
@@ -158,6 +162,10 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
       context,
       'Success real email enjoy!',
       verifyColor,
+    );
+    GoRouter.of(context).push(
+      HomeView.id,
+      extra: 'Gmail',
     );
   }
 }
