@@ -1,5 +1,3 @@
-import 'package:auth_with_firebase_application/core/helper/const_variables.dart';
-import 'package:auth_with_firebase_application/core/helper/pin_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
@@ -8,31 +6,38 @@ class CustomTextFormFieldOtpPinPut extends StatelessWidget {
     super.key,
     this.pinCount = 4,
     required this.validator,
+    required this.defaultPinTheme,
+    required this.disabledPinTheme,
+    required this.focusedPinTheme,
+    required this.errorPinTheme,
+    this.onSubmitted,
+    this.onCompleted,
   });
   final int pinCount;
   final String? Function(String?)? validator;
+  final PinTheme? defaultPinTheme;
+  final PinTheme? disabledPinTheme;
+  final PinTheme? focusedPinTheme;
+  final PinTheme? errorPinTheme;
+  final void Function(String)? onSubmitted;
+  final void Function(String)? onCompleted;
   @override
   Widget build(BuildContext context) {
     return Pinput(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       length: pinCount,
-      defaultPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(context),
-      disabledPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(context),
-      focusedPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(
-        context,
-        borderColor: kOtpLeftColor,
-      ),
-      errorPinTheme: PinThemesPinPutOtpClass.customPinThemeFunc(
-        context,
-        borderColor: kErrorColor,
-      ),
+      defaultPinTheme: defaultPinTheme,
+      disabledPinTheme: disabledPinTheme,
+      focusedPinTheme: focusedPinTheme,
+      errorPinTheme: errorPinTheme,
       pinContentAlignment: Alignment.center,
       pinAnimationType: PinAnimationType.rotation,
       validator: validator,
       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
       showCursor: true,
-      onCompleted: (pin) => print(pin),
+      onSubmitted: onSubmitted,
+      onCompleted: onCompleted,
     );
   }
 }
