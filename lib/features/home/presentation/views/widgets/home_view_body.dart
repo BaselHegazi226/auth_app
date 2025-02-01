@@ -1,3 +1,4 @@
+import 'package:auth_with_firebase_application/core/helper/const_functions.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_facebook.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_google.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/helper/const_variables.dart';
 import '../../../../../core/utilities/custom_big_icon.dart';
 import '../../../../../core/utilities/dialogState.dart';
-import '../../../../auth/presentation/views/widgets/auth_widgets/filter_section.dart';
 import 'home_view_button.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -46,11 +46,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     customAwesomeDialog(
       context: context,
       title: 'Success Sign In With ${method['name']}',
-      description: 'Welcome to the Home!',
+      description: 'Welcome to Home!',
       dialogState: 'success',
-      dialogBorderColor: method['color'] as Color,
-      dialogStateColor: method['color'] as Color,
-      titleColor: method['color'] as Color,
+      // dialogBorderColor: method['color'] as Color,
+      // dialogStateColor: method['color'] as Color,
+      // titleColor: method['color'] as Color,
       onCancelPressed: () {
         Navigator.of(context).pop(); // Close the dialog
       },
@@ -86,7 +86,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       body: SafeArea(
         child: Stack(
           children: [
-            const FilterSection(), // Fixed background
+            ConstFunctions.filterSectionBackFun(
+              method: GoRouterState.of(context).extra as String,
+            ),
             const CustomBigIcon(iconData: Icons.home_filled),
             Align(
               alignment: Alignment.center,
@@ -100,39 +102,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-
-/*
-void successAwesomeDialogInHome({required String navigateFrom}) {
-    String successFrom;
-    Color awesomeDialogColor = kEmailFocusColor;
-    //switch case to handle the different sign in methods
-    switch (navigateFrom) {
-      case SignInWithFacebook.id:
-        successFrom = 'Facebook';
-        awesomeDialogColor = kFacebookColor;
-        break;
-      case SignInWithGoogle.id:
-        successFrom = 'Google';
-        awesomeDialogColor = kGoogleColor;
-        break;
-      default:
-        successFrom = 'Gmail';
-    }
-//awesome dialog to show the animation refer to switch case
-    customAwesomeDialog(
-      context: context,
-      title: 'Success Sign In With $successFrom',
-      description: 'Welcome to the Home!',
-      dialogState: 'success',
-      dialogBorderColor: awesomeDialogColor,
-      dialogStateColor: awesomeDialogColor,
-      titleColor: awesomeDialogColor,
-      onCancelPressed: () {
-        Navigator.of(context).pop(); // Close the dialog
-      },
-      onSuccessPressed: () {
-        Navigator.of(context).pop(); // Close the dialog
-      },
-    );
-  }
- */
