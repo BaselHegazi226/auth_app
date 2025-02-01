@@ -62,15 +62,15 @@ class ConstFunctions {
     return backcolor;
   }
 
-  FilterSection filterSectionBackFun({required String method}) {
+  static FilterSection filterSectionBackFun({required String method}) {
     Map<String, dynamic> map = {
-      'google': FilterSection(
+      'Google': FilterSection(
         leftColor: kGoogleFilterLeftColor,
         rightColor: kGoogleFilterRightColor,
         centerColor: kGoogleFilterCenterColor,
       ),
-      'gmail': FilterSection(),
-      'facebook': FilterSection(
+      'Gmail': FilterSection(),
+      'Facebook': FilterSection(
         leftColor: kFacebookFilterLeftColor,
         rightColor: kFacebookFilterRightColor,
         centerColor: kFacebookFilterCenterColor,
