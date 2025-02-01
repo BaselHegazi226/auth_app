@@ -7,9 +7,9 @@ import '../../../../../../core/helper/const_variables.dart';
 class FilterSection extends StatelessWidget {
   const FilterSection({
     super.key,
-    this.centerColor = kFilterCenterColor,
-    this.rightColor = kFilterRightColor,
-    this.leftColor = kFilterLeftColor,
+    this.centerColor = kGmailFilterCenterColor,
+    this.rightColor = kGmailFilterRightColor,
+    this.leftColor = kGmailFilterLeftColor,
   });
   final Color centerColor, rightColor, leftColor;
   @override
