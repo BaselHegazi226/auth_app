@@ -2,6 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/auth/presentation/views/widgets/auth_widgets/filter_section.dart';
 import 'const_variables.dart';
 
 class ConstFunctions {
@@ -59,5 +60,22 @@ class ConstFunctions {
         break;
     }
     return backcolor;
+  }
+
+  FilterSection filterSectionBackFun({required String method}) {
+    Map<String, dynamic> map = {
+      'google': FilterSection(
+        leftColor: kGoogleFilterLeftColor,
+        rightColor: kGoogleFilterRightColor,
+        centerColor: kGoogleFilterCenterColor,
+      ),
+      'gmail': FilterSection(),
+      'facebook': FilterSection(
+        leftColor: kFacebookFilterLeftColor,
+        rightColor: kFacebookFilterRightColor,
+        centerColor: kFacebookFilterCenterColor,
+      ),
+    };
+    return map[method];
   }
 }
