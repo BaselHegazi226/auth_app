@@ -1,6 +1,5 @@
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_facebook.dart';
 import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_google.dart';
-import 'package:auth_with_firebase_application/features/auth/presentation/views/widgets/sign_in_widgets/sign_in_with_phone.dart';
 import 'package:flutter/material.dart';
 
 class OtherSignIn extends StatelessWidget {
@@ -25,7 +24,7 @@ class OtherSignIn extends StatelessWidget {
           isEnableFacebookButton: isEnableButton,
         ),
         SizedBox(width: 16),
-        SignInWithPhone(),
+        //SignInWithPhone(),
       ],
     );
   }
