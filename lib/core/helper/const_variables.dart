@@ -20,9 +20,17 @@ final Color kMacColor = Colors.black.withOpacity(.7);
 const Color kFilledTextFormFieldColor = Colors.grey;
 const kErrorColor = Colors.red;
 
-const Color kFilterCenterColor = Color.fromRGBO(255, 204, 128, 1);
-const Color kFilterRightColor = Color.fromRGBO(206, 147, 216, 1);
-const Color kFilterLeftColor = Color.fromRGBO(244, 143, 177, 1);
+const Color kGmailFilterCenterColor = Color.fromRGBO(255, 204, 128, 1);
+const Color kGmailFilterRightColor = Color.fromRGBO(206, 147, 216, 1);
+const Color kGmailFilterLeftColor = Color.fromRGBO(244, 143, 177, 1);
+
+const Color kGoogleFilterCenterColor = Color.fromRGBO(66, 66, 66, 1);
+const Color kGoogleFilterRightColor = Color.fromRGBO(33, 33, 33, 1);
+const Color kGoogleFilterLeftColor = Color.fromRGBO(0, 0, 0, 1);
+
+const Color kFacebookFilterCenterColor = Color.fromRGBO(59, 89, 152, 1);
+const Color kFacebookFilterRightColor = Color.fromRGBO(41, 72, 125, 1);
+const Color kFacebookFilterLeftColor = Color.fromRGBO(24, 52, 90, 1);
 
 const Color kTitleDialogColor = Color(0xff00CA71);
 const Color kDialogStateColor = Color(0xff00CA71);
